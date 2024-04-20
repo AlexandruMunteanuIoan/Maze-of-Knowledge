@@ -154,6 +154,12 @@ PrefabInstance:
       propertyPath: Maze
       value: 
       objectReference: {fileID: 2141529923}
+    - target: {fileID: 5899347191926961524, guid: e35bb85a1db2c7c4b95640537d4b637f,
+        type: 3}
+      propertyPath: _mazeCellPrefab
+      value: 
+      objectReference: {fileID: 2477072374925733959, guid: 5f9cc2ddcfc824647893c3ddea935490,
+        type: 3}
     - target: {fileID: 7566773345222414660, guid: e35bb85a1db2c7c4b95640537d4b637f,
         type: 3}
       propertyPath: m_LocalPosition.x
