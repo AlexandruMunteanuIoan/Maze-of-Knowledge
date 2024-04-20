@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using System.Numerics;
 
 public class MazeGenerator : MonoBehaviour
 {
@@ -16,20 +17,32 @@ public class MazeGenerator : MonoBehaviour
 
     private MazeCell[,] _mazeGrid;
 
+    public Transform Maze;
+
+    public UnityEngine.GameObject plane;
+    private int planeDefaultX = 10;
+    private int planeDefaultY = 10;
+
     // Start is called before the first frame update
     void Start()
     {
+        // Create the plane which represents the ground in the game
+        plane = UnityEngine.GameObject.CreatePrimitive(UnityEngine.PrimitiveType.Plane);
+
         _mazeGrid = new MazeCell[_mazeWidth, _mazeDepth];
         
         for(int x = 0; x < _mazeWidth; x++) 
         {
             for(int z = 0; z < _mazeDepth; z++)
             {
-                _mazeGrid[x, z] = Instantiate(_mazeCellPrefab, new Vector3(x, 0, z), Quaternion.identity);
+                _mazeGrid[x, z] = Instantiate(_mazeCellPrefab, new UnityEngine.Vector3(x, 0, z), UnityEngine.Quaternion.identity, Maze);
             }
         }
 
         GenerateMaze(null, _mazeGrid[0, 0]);
+
+        plane.transform.position = new UnityEngine.Vector3(_mazeDepth/2, 0, _mazeWidth/2);
+        plane.transform.localScale = new UnityEngine.Vector3(_mazeDepth/*/planeDefaultX*/, 1, _mazeWidth/*/planeDefaultY*/);
     }
 
     private void GenerateMaze(MazeCell previousCell, MazeCell currentCell)
