@@ -26,6 +26,7 @@ public class MazeGenerator : MonoBehaviour
 
     void Start()
     {
+        _mazeCellPrefab.SetDecor();
         plane = UnityEngine.GameObject.CreatePrimitive(UnityEngine.PrimitiveType.Plane);
 
         _mazeGrid = new MazeCell[_mazeWidth, _mazeDepth];

@@ -19,8 +19,18 @@ public class MazeCell : MonoBehaviour
     [SerializeField]
     private GameObject _unvisitedBlock;
 
-    public bool IsVisited {get; private set;}
+    [SerializeField]
+    private GameObject _backDecor;
 
+    [SerializeField]
+    private GameObject _frontDecor;
+
+    public bool IsVisited {get; private set;}
+    public void SetDecor()
+    {
+        _frontDecor.SetActive(false);
+        _backDecor.SetActive(false);
+    }
     public void Visit()
     {
         IsVisited = true;
@@ -29,21 +39,48 @@ public class MazeCell : MonoBehaviour
     public void ClearLeftWall()
     {
         _leftWall.SetActive(false);
+        if (_frontWall.activeSelf && Random.Range(0, 10) == 0)
+        {
+            _frontDecor.SetActive(true);
+        }
+
+        if (_backWall.activeSelf && Random.Range(0, 10) == 0)
+        {
+            _backDecor.SetActive(true);
+        }
     }
 
     public void ClearRightWall()
     {
         _rightWall.SetActive(false);
+        if (_frontWall.activeSelf && Random.Range(0, 10) == 0)
+        {
+            _frontDecor.SetActive(true);
+        }
+        if (_backWall.activeSelf && Random.Range(0, 10) == 0)
+        {
+            _backDecor.SetActive(true);
+        }
     }
 
     public void ClearFrontWall()
     {
         _frontWall.SetActive(false);
+        _frontDecor.SetActive(false);
+        if (_backWall.activeSelf && Random.Range(0, 10) == 0)
+        {
+            _backDecor.SetActive(true);
+        }
     }
 
     public void ClearBackWall()
     {
         _backWall.SetActive(false);
+        _backDecor.SetActive(false);
+        if (_frontWall.activeSelf && Random.Range(0, 10) == 0)
+        {
+            _frontDecor.SetActive(true);
+        }
     }
 
 }
