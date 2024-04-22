@@ -156,6 +156,16 @@ PrefabInstance:
       objectReference: {fileID: 2141529923}
     - target: {fileID: 5899347191926961524, guid: e35bb85a1db2c7c4b95640537d4b637f,
         type: 3}
+      propertyPath: _mazeDepth
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 5899347191926961524, guid: e35bb85a1db2c7c4b95640537d4b637f,
+        type: 3}
+      propertyPath: _mazeWidth
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 5899347191926961524, guid: e35bb85a1db2c7c4b95640537d4b637f,
+        type: 3}
       propertyPath: _mazeCellPrefab
       value: 
       objectReference: {fileID: 2477072374925733959, guid: 5f9cc2ddcfc824647893c3ddea935490,
@@ -233,6 +243,41 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 5192186165153801807, guid: 9e073420b68c2be4884a78a995896fa3,
+        type: 3}
+      propertyPath: jumpForce
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 5192186165153801807, guid: 9e073420b68c2be4884a78a995896fa3,
+        type: 3}
+      propertyPath: moveSpeed
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5192186165153801807, guid: 9e073420b68c2be4884a78a995896fa3,
+        type: 3}
+      propertyPath: groundDrag
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5192186165153801807, guid: 9e073420b68c2be4884a78a995896fa3,
+        type: 3}
+      propertyPath: jumpCooldown
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 5192186165153801807, guid: 9e073420b68c2be4884a78a995896fa3,
+        type: 3}
+      propertyPath: playerHeight
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5192186165153801807, guid: 9e073420b68c2be4884a78a995896fa3,
+        type: 3}
+      propertyPath: airMultiplier
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5192186165153801807, guid: 9e073420b68c2be4884a78a995896fa3,
+        type: 3}
+      propertyPath: whatIsGround.m_Bits
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8168146422593594701, guid: 9e073420b68c2be4884a78a995896fa3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -305,6 +350,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: CameraHolder
+      objectReference: {fileID: 0}
+    - target: {fileID: 5719131992033181305, guid: 02b7880fd0886b14e9e35d04b0205cd1,
+        type: 3}
+      propertyPath: sensX
+      value: 250
+      objectReference: {fileID: 0}
+    - target: {fileID: 5719131992033181305, guid: 02b7880fd0886b14e9e35d04b0205cd1,
+        type: 3}
+      propertyPath: sensY
+      value: 250
       objectReference: {fileID: 0}
     - target: {fileID: 5719131992033181305, guid: 02b7880fd0886b14e9e35d04b0205cd1,
         type: 3}

@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 using System.Numerics;
+using System.Threading;
+using UnityEditorInternal;
 
 public class MazeGenerator : MonoBehaviour
 {
@@ -41,8 +43,8 @@ public class MazeGenerator : MonoBehaviour
 
         GenerateMaze(null, _mazeGrid[0, 0]);
 
-        plane.transform.position = new UnityEngine.Vector3(_mazeDepth/2, 0, _mazeWidth/2);
-        plane.transform.localScale = new UnityEngine.Vector3(_mazeDepth/*/planeDefaultX*/, 1, _mazeWidth/*/planeDefaultY*/);
+        plane.transform.position = new UnityEngine.Vector3((_mazeDepth/2)-0.5f, 0, (_mazeWidth/2)-0.5f);
+        plane.transform.localScale = new UnityEngine.Vector3(_mazeDepth/planeDefaultX, 1, _mazeWidth/planeDefaultY);
     }
 
     private void GenerateMaze(MazeCell previousCell, MazeCell currentCell)
