@@ -29,7 +29,6 @@ public class MazeGenerator : MonoBehaviour
     void Start()
     {
         _mazeCellPrefab.SetDecor();
-        plane = UnityEngine.GameObject.CreatePrimitive(UnityEngine.PrimitiveType.Plane);
 
         _mazeGrid = new MazeCell[_mazeWidth, _mazeDepth];
         
@@ -43,8 +42,9 @@ public class MazeGenerator : MonoBehaviour
 
         GenerateMaze(null, _mazeGrid[0, 0]);
 
-        plane.transform.position = new UnityEngine.Vector3((_mazeDepth/2)-0.5f, 0, (_mazeWidth/2)-0.5f);
-        plane.transform.localScale = new UnityEngine.Vector3(_mazeDepth/planeDefaultX, 1, _mazeWidth/planeDefaultY);
+        // Translate and resize the plane acordingly
+        plane.transform.position = new UnityEngine.Vector3((_mazeDepth * wallSize / 2) - 2.0f, 0, (_mazeWidth * wallSize / 2) - 4.0f);
+        plane.transform.localScale = new UnityEngine.Vector3(_mazeDepth*wallSize/planeDefaultX, 1, _mazeWidth*wallSize/planeDefaultY);
     }
 
     private void GenerateMaze(MazeCell previousCell, MazeCell currentCell)

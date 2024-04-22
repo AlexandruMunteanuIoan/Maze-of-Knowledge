@@ -10,7 +10,7 @@ public class PlayerMovement : MonoBehaviour
     public float jumpForce;
     public float jumpCooldown;
     public float airMultiplier;
-    private bool readyToJump;
+    private bool readyToJump = true;
 
     [Header("Keybinds")]
     public KeyCode jumpKey = KeyCode.Space;
@@ -104,7 +104,7 @@ public class PlayerMovement : MonoBehaviour
         // reset y velocity
         rb.velocity = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
 
-        rb.AddForce(transform.up * jumpForce, ForceMode.Force);
+        rb.AddForce(transform.up * jumpForce * 100, ForceMode.Force);
     }
 
     private void ResetJump() 
