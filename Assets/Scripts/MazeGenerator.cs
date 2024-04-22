@@ -24,11 +24,11 @@ public class MazeGenerator : MonoBehaviour
     public UnityEngine.GameObject plane;
     private int planeDefaultX = 10;
     private int planeDefaultY = 10;
+    private int wallSize = 4;
 
-    // Start is called before the first frame update
     void Start()
     {
-        // Create the plane which represents the ground in the game
+        _mazeCellPrefab.SetDecor();
         plane = UnityEngine.GameObject.CreatePrimitive(UnityEngine.PrimitiveType.Plane);
 
         _mazeGrid = new MazeCell[_mazeWidth, _mazeDepth];
@@ -37,7 +37,7 @@ public class MazeGenerator : MonoBehaviour
         {
             for(int z = 0; z < _mazeDepth; z++)
             {
-                _mazeGrid[x, z] = Instantiate(_mazeCellPrefab, new UnityEngine.Vector3(x, 0, z), UnityEngine.Quaternion.identity, Maze);
+                _mazeGrid[x, z] = Instantiate(_mazeCellPrefab, new UnityEngine.Vector3(x * wallSize, 0, z * wallSize), UnityEngine.Quaternion.identity, Maze);
             }
         }
 
@@ -75,8 +75,8 @@ public class MazeGenerator : MonoBehaviour
 
     private IEnumerable<MazeCell> GetUnvisitedCell(MazeCell currentCell)
     {
-        int x = (int)currentCell.transform.position.x;
-        int z = (int)currentCell.transform.position.z;
+        int x = (int)currentCell.transform.position.x / wallSize;
+        int z = (int)currentCell.transform.position.z / wallSize;
 
         if( x + 1 < _mazeWidth)
         {
@@ -157,7 +157,6 @@ public class MazeGenerator : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
     void Update()
     {
         
