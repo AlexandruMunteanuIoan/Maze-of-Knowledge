@@ -37,6 +37,8 @@ public class MazeCell : MonoBehaviour
     [SerializeField]
     private GameObject _columnDecor4;
 
+    public GameObject topDecorPlaceHolder;
+
     public bool IsVisited {get; private set;}
     public void SetDecor()
     {

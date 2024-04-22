@@ -1,10 +1,6 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
-using System.Numerics;
-using System.Threading;
-using UnityEditorInternal;
 
 public class MazeGenerator : MonoBehaviour
 {
@@ -16,6 +12,8 @@ public class MazeGenerator : MonoBehaviour
 
     [SerializeField]
     private int _mazeDepth;
+
+    public GameObject[] topDecorObjects;
 
     private MazeCell[,] _mazeGrid;
 
@@ -37,13 +35,28 @@ public class MazeGenerator : MonoBehaviour
             for(int z = 0; z < _mazeDepth; z++)
             {
                 _mazeGrid[x, z] = Instantiate(_mazeCellPrefab, new UnityEngine.Vector3(x * wallSize, 0, z * wallSize), UnityEngine.Quaternion.identity, Maze);
+
+                // Instantiate a new random item from the list on top of the column
+                if(Random.Range(1, 100) > 60)
+                {
+                    // Get an object index inside the object array
+                    int objectIndex = Random.Range(0, topDecorObjects.Length);
+
+                    UnityEngine.Vector3 local = _mazeGrid[x, z].topDecorPlaceHolder.transform.position;
+                    _mazeGrid[x, z].topDecorPlaceHolder = Instantiate(topDecorObjects[objectIndex], local, UnityEngine.Quaternion.identity, Maze);
+
+                    // Resize objects using random range value
+                    float resizeMultiplier = Random.Range(1.5f, 2.0f);
+                    _mazeGrid[x, z].topDecorPlaceHolder.transform.localScale = new Vector3(resizeMultiplier, resizeMultiplier, resizeMultiplier);
+                }
+               
             }
         }
 
         GenerateMaze(null, _mazeGrid[0, 0]);
 
         // Translate and resize the plane accordingly
-        plane.transform.position = new UnityEngine.Vector3((_mazeDepth * wallSize / 2) - 2.0f, 0, (_mazeWidth * wallSize / 2) - 4.0f);
+        plane.transform.position = new UnityEngine.Vector3((_mazeDepth * wallSize / 2) - 4.6f, 0, (_mazeWidth * wallSize / 2) - 4.6f);
         plane.transform.localScale = new UnityEngine.Vector3(_mazeDepth*wallSize/planeDefaultX, 1, _mazeWidth*wallSize/planeDefaultY);
     }
 
