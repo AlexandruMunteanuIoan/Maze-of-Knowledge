@@ -20,9 +20,9 @@ public class MazeGenerator : MonoBehaviour
     public Transform Maze;
 
     public UnityEngine.GameObject plane;
-    private int planeDefaultX = 10;
-    private int planeDefaultY = 10;
-    private int wallSize = 4;
+    private readonly int planeDefaultX = 10;
+    private readonly int planeDefaultY = 10;
+    private readonly int wallSize = 4;
 
     void Start()
     {
@@ -48,6 +48,10 @@ public class MazeGenerator : MonoBehaviour
                     // Resize objects using random range value
                     float resizeMultiplier = Random.Range(1.5f, 2.0f);
                     _mazeGrid[x, z].topDecorPlaceHolder.transform.localScale = new Vector3(resizeMultiplier, resizeMultiplier, resizeMultiplier);
+
+                    // Apply material to the decor objects
+                    Material DecorMaterial = (Material)Resources.Load("Maze Material", typeof(Material)) ?? throw new System.Exception("Material not existing");
+                    _mazeGrid[x, z].topDecorPlaceHolder.GetComponent<MeshRenderer>().material = DecorMaterial;
                 }
                
             }
