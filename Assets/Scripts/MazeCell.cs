@@ -5,37 +5,25 @@ using UnityEngine;
 public class MazeCell : MonoBehaviour
 {
     [SerializeField]
-    private GameObject _leftWall;
+    public GameObject _leftWall;
 
     [SerializeField]
-    private GameObject _rightWall;
+    public GameObject _rightWall;
 
     [SerializeField]
-    private GameObject _frontWall;
+    public GameObject _frontWall;
 
     [SerializeField]
-    private GameObject _backWall;
+    public GameObject _backWall;
 
     [SerializeField]
-    private GameObject _unvisitedBlock;
+    public GameObject _unvisitedBlock;
 
     [SerializeField]
-    private GameObject _backDecor;
+    public GameObject _backDecor;
 
     [SerializeField]
-    private GameObject _frontDecor;
-
-    [SerializeField]
-    private GameObject _columnDecor1;
-
-    [SerializeField]
-    private GameObject _columnDecor2;
-
-    [SerializeField]
-    private GameObject _columnDecor3;
-
-    [SerializeField]
-    private GameObject _columnDecor4;
+    public GameObject _frontDecor;
 
     public GameObject topDecorPlaceHolder;
 

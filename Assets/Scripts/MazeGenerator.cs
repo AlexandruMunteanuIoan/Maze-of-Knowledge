@@ -37,7 +37,7 @@ public class MazeGenerator : MonoBehaviour
                 _mazeGrid[x, z] = Instantiate(_mazeCellPrefab, new UnityEngine.Vector3(x * wallSize, 0, z * wallSize), UnityEngine.Quaternion.identity, Maze);
 
                 // Instantiate a new random item from the list on top of the column
-                if(Random.Range(1, 100) > 60)
+                if(Random.Range(1, 100) > 40)
                 {
                     // Get an object index inside the object array
                     int objectIndex = Random.Range(0, topDecorObjects.Length);
