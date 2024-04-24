@@ -415,12 +415,12 @@ PrefabInstance:
     - target: {fileID: 5719131992033181305, guid: 02b7880fd0886b14e9e35d04b0205cd1,
         type: 3}
       propertyPath: sensX
-      value: 500
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 5719131992033181305, guid: 02b7880fd0886b14e9e35d04b0205cd1,
         type: 3}
       propertyPath: sensY
-      value: 500
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 5719131992033181305, guid: 02b7880fd0886b14e9e35d04b0205cd1,
         type: 3}
@@ -518,12 +518,12 @@ PrefabInstance:
     - target: {fileID: 2810634326507834585, guid: ffcce1e7a913a1b4c9daee134bb32833,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 10
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2810634326507834585, guid: ffcce1e7a913a1b4c9daee134bb32833,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 10
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2810634326507834585, guid: ffcce1e7a913a1b4c9daee134bb32833,
         type: 3}
