@@ -178,7 +178,7 @@ PrefabInstance:
     - target: {fileID: 5899347191926961524, guid: e35bb85a1db2c7c4b95640537d4b637f,
         type: 3}
       propertyPath: _mazeWidth
-      value: 10
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 5899347191926961524, guid: e35bb85a1db2c7c4b95640537d4b637f,
         type: 3}

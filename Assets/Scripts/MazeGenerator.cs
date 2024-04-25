@@ -60,8 +60,8 @@ public class MazeGenerator : MonoBehaviour
         GenerateMaze(null, _mazeGrid[0, 0]);
 
         // Translate and resize the plane accordingly
-        plane.transform.position = new UnityEngine.Vector3((_mazeDepth * wallSize / 2) - 4.6f, 0, (_mazeWidth * wallSize / 2) - 4.6f);
-        plane.transform.localScale = new UnityEngine.Vector3(_mazeDepth*wallSize/planeDefaultX, 1, _mazeWidth*wallSize/planeDefaultY);
+        plane.transform.position = new UnityEngine.Vector3((_mazeWidth * wallSize / 2) - 4.6f, 0, (_mazeDepth * wallSize / 2) - 4.6f);
+        plane.transform.localScale = new UnityEngine.Vector3(_mazeWidth * wallSize/planeDefaultX, 1, _mazeDepth * wallSize/planeDefaultY);
     }
 
     private void GenerateMaze(MazeCell previousCell, MazeCell currentCell)
