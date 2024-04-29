@@ -41,12 +41,12 @@ public class MazeCell : MonoBehaviour
     public void ClearLeftWall()
     {
         _leftWall.SetActive(false);
-        if (_frontWall.activeSelf && Random.Range(0, 10) == 0)
+        if (_frontWall.activeSelf && Random.Range(0, 5) == 0)
         {
             _frontDecor.SetActive(true);
         }
 
-        if (_backWall.activeSelf && Random.Range(0, 10) == 0)
+        if (_backWall.activeSelf && Random.Range(0, 5) == 0)
         {
             _backDecor.SetActive(true);
         }
@@ -55,11 +55,11 @@ public class MazeCell : MonoBehaviour
     public void ClearRightWall()
     {
         _rightWall.SetActive(false);
-        if (_frontWall.activeSelf && Random.Range(0, 10) == 0)
+        if (_frontWall.activeSelf && Random.Range(0, 5) == 0)
         {
             _frontDecor.SetActive(true);
         }
-        if (_backWall.activeSelf && Random.Range(0, 10) == 0)
+        if (_backWall.activeSelf && Random.Range(0, 5) == 0)
         {
             _backDecor.SetActive(true);
         }
@@ -69,7 +69,7 @@ public class MazeCell : MonoBehaviour
     {
         _frontWall.SetActive(false);
         _frontDecor.SetActive(false);
-        if (_backWall.activeSelf && Random.Range(0, 10) == 0)
+        if (_backWall.activeSelf && Random.Range(0, 5) == 0)
         {
             _backDecor.SetActive(true);
         }
@@ -79,7 +79,7 @@ public class MazeCell : MonoBehaviour
     {
         _backWall.SetActive(false);
         _backDecor.SetActive(false);
-        if (_frontWall.activeSelf && Random.Range(0, 10) == 0)
+        if (_frontWall.activeSelf && Random.Range(0, 5) == 0)
         {
             _frontDecor.SetActive(true);
         }
