@@ -24,6 +24,9 @@ public class MazeGenerator : MonoBehaviour
     private readonly int planeDefaultY = 10;
     private readonly int wallSize = 4;
 
+    public UnityEngine.Material planeMaterial;
+    private readonly int planeMaterialScaleFactor = 5;
+
     void Start()
     {
         _mazeCellPrefab.SetDecor();
@@ -62,6 +65,7 @@ public class MazeGenerator : MonoBehaviour
         // Translate and resize the plane accordingly
         plane.transform.position = new UnityEngine.Vector3((_mazeWidth * wallSize / 2) - 4.6f, 0, (_mazeDepth * wallSize / 2) - 4.6f);
         plane.transform.localScale = new UnityEngine.Vector3(_mazeWidth * wallSize/planeDefaultX, 1, _mazeDepth * wallSize/planeDefaultY);
+        planeMaterial.mainTextureScale = new Vector2(_mazeWidth * planeMaterialScaleFactor, _mazeDepth * planeMaterialScaleFactor);
     }
 
     private void GenerateMaze(MazeCell previousCell, MazeCell currentCell)
