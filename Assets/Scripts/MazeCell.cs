@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class MazeCell : MonoBehaviour
 {
+    public Vector3 Position;
+
     [SerializeField]
     public GameObject _leftWall;
 

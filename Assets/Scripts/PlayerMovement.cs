@@ -26,6 +26,7 @@ public class PlayerMovement : MonoBehaviour
     float verticalInput;
 
     Vector3 moveDirection;
+    public UnityEngine.GameObject Player;
 
     Rigidbody rb;
 
@@ -33,6 +34,9 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        // Set initial player position to the rigid body
+        rb.position = Player.transform.position;
+
         rb.freezeRotation = true;
     }
 

@@ -15,7 +15,7 @@ public class MazeGenerator : MonoBehaviour
 
     public GameObject[] topDecorObjects;
 
-    private MazeCell[,] _mazeGrid;
+    public MazeCell[,] _mazeGrid;
 
     public Transform Maze;
 
@@ -26,6 +26,8 @@ public class MazeGenerator : MonoBehaviour
 
     public UnityEngine.Material planeMaterial;
     private readonly int planeMaterialScaleFactor = 5;
+
+    public UnityEngine.GameObject PlayerObject;
 
     void Start()
     {
@@ -38,18 +40,18 @@ public class MazeGenerator : MonoBehaviour
             for(int z = 0; z < _mazeDepth; z++)
             {
                 _mazeGrid[x, z] = Instantiate(_mazeCellPrefab, new UnityEngine.Vector3(x * wallSize, 0, z * wallSize), UnityEngine.Quaternion.identity, Maze);
-
+                _mazeGrid[x, z].Position = new UnityEngine.Vector3(x * wallSize, 0, z * wallSize);
                 // Instantiate a new random item from the list on top of the column
-                if(Random.Range(1, 100) > 40)
+                if (UnityEngine.Random.Range(1, 100) > 40)
                 {
                     // Get an object index inside the object array
-                    int objectIndex = Random.Range(0, topDecorObjects.Length);
+                    int objectIndex = UnityEngine. Random.Range(0, topDecorObjects.Length);
 
                     UnityEngine.Vector3 local = _mazeGrid[x, z].topDecorPlaceHolder.transform.position;
                     _mazeGrid[x, z].topDecorPlaceHolder = Instantiate(topDecorObjects[objectIndex], local, UnityEngine.Quaternion.identity, Maze);
 
                     // Resize objects using random range value
-                    float resizeMultiplier = Random.Range(1.5f, 2.0f);
+                    float resizeMultiplier = UnityEngine.Random.Range(1.5f, 2.0f);
                     _mazeGrid[x, z].topDecorPlaceHolder.transform.localScale = new Vector3(resizeMultiplier, resizeMultiplier, resizeMultiplier);
 
                     // Apply material to the decor objects
@@ -60,12 +62,43 @@ public class MazeGenerator : MonoBehaviour
             }
         }
 
+        // Shape the maze 
         GenerateMaze(null, _mazeGrid[0, 0]);
 
+        // Generate the plane respective to maze size
+        PlaneGenerate();
+
+        // Spawn the player somewhere inside the maze
+        SpawnPlayer();
+
+        //_mazeGrid[0, 0].transform.position;
+    }
+
+    private void SpawnPlayer()
+    {
+        // Get random value inside the maze
+        int playerPosX = UnityEngine.Random.Range(0, _mazeWidth);
+        int playerPosY = UnityEngine.Random.Range(0, _mazeDepth);
+
+        // Get cell position at that location in the grid
+        Vector3 cellPosition = _mazeGrid[playerPosX, playerPosY].Position;
+
+        // Increase spawn player location
+        cellPosition.z += 1; // Above the ground
+        cellPosition.y += 2.5f; // Middle of the cell on y axis
+        cellPosition.x += 2.5f; // Middle of the cell on x axis
+
+        // Set player position to that position
+        PlayerObject.transform.position = new Vector3(cellPosition.x, cellPosition.y, cellPosition.z);
+    }
+
+    private void PlaneGenerate()
+    {
         // Translate and resize the plane accordingly
-        plane.transform.position = new UnityEngine.Vector3((_mazeWidth * wallSize / 2) - 4.6f, 0, (_mazeDepth * wallSize / 2) - 4.6f);
-        plane.transform.localScale = new UnityEngine.Vector3(_mazeWidth * wallSize/planeDefaultX, 1, _mazeDepth * wallSize/planeDefaultY);
         planeMaterial.mainTextureScale = new Vector2(_mazeWidth * planeMaterialScaleFactor, _mazeDepth * planeMaterialScaleFactor);
+        plane.transform.position = new UnityEngine.Vector3((_mazeWidth * wallSize / 2) - 4.6f, 0, (_mazeDepth * wallSize / 2) - 4.6f);
+        plane.transform.localScale = new UnityEngine.Vector3(_mazeWidth * wallSize / planeDefaultX, 1, _mazeDepth * wallSize / planeDefaultY);
+
     }
 
     private void GenerateMaze(MazeCell previousCell, MazeCell currentCell)
@@ -91,7 +124,7 @@ public class MazeGenerator : MonoBehaviour
     {
         var unvisitedCells = GetUnvisitedCell(currentCell);
 
-        return unvisitedCells.OrderBy(_ => Random.Range(1,10)).FirstOrDefault();
+        return unvisitedCells.OrderBy(_ => UnityEngine.Random.Range(1,10)).FirstOrDefault();
     }
 
     private IEnumerable<MazeCell> GetUnvisitedCell(MazeCell currentCell)
@@ -176,10 +209,5 @@ public class MazeGenerator : MonoBehaviour
             currentCell.ClearBackWall();
             return;
         }
-    }
-
-    void Update()
-    {
-        
     }
 }
