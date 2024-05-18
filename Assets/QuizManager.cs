@@ -10,19 +10,33 @@ public class QuizManager : MonoBehaviour
     public int currentQuestion;
 
     public TextMeshProUGUI QuestionText;
+    public TextMeshProUGUI scoreTxt;
+
+    public GameObject QuizPanel;
+    public GameObject GoPanel;
+
+    int totalQ = 0;
+    public int score;
 
     private void Start()
     {
+        totalQ = QnA.Count;
+        GoPanel.SetActive(false);
         generateQuestion();
     }
 
     void generateQuestion()
     {
-        currentQuestion = Random.Range(0, QnA.Count);
-
-        QuestionText.text = QnA[currentQuestion].Question;
-
-        SetAnswer();
+        if (QnA.Count > 0)
+        {
+            currentQuestion = Random.Range(0, QnA.Count);
+            QuestionText.text = QnA[currentQuestion].Question;
+            SetAnswer();
+        }
+        else
+        {
+            GameOver();
+        }
     }
 
     void SetAnswer()
@@ -41,7 +55,30 @@ public class QuizManager : MonoBehaviour
 
     public void correct()
     {
+        score += 1;
+        QnA.RemoveAt(currentQuestion);
+        generateQuestion();
+        
+    }
+
+    public void GameOver()
+    {
+        QuizPanel.SetActive(false);
+        GoPanel.SetActive(true);
+        scoreTxt.text = score + "/" + totalQ;
+    }
+
+    public void exit()
+    {
+        Application.Quit();
+        Debug.Log("Application has been closed.");
+    }
+
+    public void wrong()
+    {
         QnA.RemoveAt(currentQuestion);
         generateQuestion();
     }
+
+
 }
