@@ -9,6 +9,12 @@ EditorBuildSettings:
     path: Assets/SampleScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
   - enabled: 1
+    path: Assets/Scenes/FirstScene.unity
+    guid: 60215703bb2b9354abc837103d84fe59
+  - enabled: 1
     path: Assets/Scenes/MainScene.unity
     guid: 8a9ce11159127d34abf58892daf53b62
+  - enabled: 0
+    path: Assets/Scenes/Quiz.unity
+    guid: 63fe3030f6234524f896361543fa3126
   m_configObjects: {}
