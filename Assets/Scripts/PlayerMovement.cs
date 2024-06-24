@@ -28,7 +28,7 @@ public class PlayerMovement : MonoBehaviour
     Vector3 moveDirection;
     public UnityEngine.GameObject Player;
 
-    Rigidbody rb;
+    public static Rigidbody rb;
 
     // Start is called before the first frame update
     void Start()
@@ -84,7 +84,7 @@ public class PlayerMovement : MonoBehaviour
 
         // on ground
         if (grounded)
-            rb.AddForce(moveDirection.normalized * moveSpeed*10f, ForceMode.Force);
+            rb.AddForce(moveDirection.normalized * moveSpeed * 10f, ForceMode.Force);
 
         // in air
         else
