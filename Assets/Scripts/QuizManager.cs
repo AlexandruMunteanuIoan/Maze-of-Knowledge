@@ -1,13 +1,15 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using System.IO;
 
 public class QuizManager : MonoBehaviour
 {
-    public List<QandA> QnA;
+    public static List<QandA> QnA = new List<QandA>();
     public GameObject[] options;
     public int currentQuestion;
+    public TextAsset quizFile;  // Variabilă publică pentru fișierul de întrebări
 
     public TextMeshProUGUI QuestionText;
     public TextMeshProUGUI scoreTxt;
@@ -20,9 +22,18 @@ public class QuizManager : MonoBehaviour
 
     private void Start()
     {
-        totalQ = QnA.Count;
-        GoPanel.SetActive(false);
-        generateQuestion();
+        if (quizFile != null)
+        {
+            ParseDocument(quizFile);
+            SelectRandomQuestions();
+            totalQ = QnA.Count;
+            GoPanel.SetActive(false);
+            generateQuestion();
+        }
+        else
+        {
+            Debug.LogError("Quiz file is not assigned in the Inspector.");
+        }
     }
 
     void generateQuestion()
@@ -46,7 +57,7 @@ public class QuizManager : MonoBehaviour
             options[i].GetComponent<AnsersScript>().isCorrect = false;
             options[i].transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = QnA[currentQuestion].Answers[i];
 
-            if (QnA[currentQuestion].CorrectAnswer == i + 1)
+            if (QnA[currentQuestion].CorrectAnswer == i)
             {
                 options[i].GetComponent<AnsersScript>().isCorrect = true;
             }
@@ -58,7 +69,6 @@ public class QuizManager : MonoBehaviour
         score += 1;
         QnA.RemoveAt(currentQuestion);
         generateQuestion();
-        
     }
 
     public void GameOver()
@@ -80,5 +90,76 @@ public class QuizManager : MonoBehaviour
         generateQuestion();
     }
 
+    void ParseDocument(TextAsset quizFile)
+    {
+        QnA.Clear();
 
+        string[] lines = quizFile.text.Split('\n');
+        QandA currentQandA = null;
+
+        foreach (string line in lines)
+        {
+            if (line.StartsWith("**Hint:**"))
+            {
+                if (currentQandA != null)
+                {
+                    QnA.Add(currentQandA);
+                }
+                currentQandA = new QandA();
+                currentQandA.Hint = line.Replace("**Hint:**", "").Trim();
+            }
+            else if (line.StartsWith("**Întrebarea:**"))
+            {
+                currentQandA.Question = line.Replace("**Întrebarea:**", "").Trim();
+            }
+            else if (line.StartsWith("**Răspunsuri:**"))
+            {
+                currentQandA.Answers = new string[4];
+            }
+            else if (line.StartsWith("1."))
+            {
+                currentQandA.Answers[0] = line.Substring(3).Trim();
+            }
+            else if (line.StartsWith("2."))
+            {
+                currentQandA.Answers[1] = line.Substring(3).Trim();
+            }
+            else if (line.StartsWith("3."))
+            {
+                currentQandA.Answers[2] = line.Substring(3).Trim();
+            }
+            else if (line.StartsWith("4."))
+            {
+                currentQandA.Answers[3] = line.Substring(3).Trim();
+            }
+            else if (line.StartsWith("**Indexul:**"))
+            {
+                currentQandA.CorrectAnswer = int.Parse(line.Replace("**Indexul:**", "").Trim()) - 1;
+            }
+        }
+
+        if (currentQandA != null)
+        {
+            QnA.Add(currentQandA);
+        }
+    }
+
+    void SelectRandomQuestions()
+    {
+        List<QandA> selectedQuestions = new List<QandA>();
+        int numberOfQuestions = Mathf.Min(10, QnA.Count);
+        HashSet<int> selectedIndices = new HashSet<int>();
+
+        while (selectedIndices.Count < numberOfQuestions)
+        {
+            int randomIndex = Random.Range(0, QnA.Count);
+            if (!selectedIndices.Contains(randomIndex))
+            {
+                selectedIndices.Add(randomIndex);
+                selectedQuestions.Add(QnA[randomIndex]);
+            }
+        }
+
+        QnA = selectedQuestions;
+    }
 }

@@ -18,5 +18,5 @@ public class AnsersScript : MonoBehaviour
             quizManager.wrong();
         }
     }
-    
+
 }
