@@ -17,8 +17,6 @@ public class MazeGenerator : MonoBehaviour
 
     public MazeCell[,] _mazeGrid;
 
-    public Transform Maze;
-
     public UnityEngine.GameObject plane;
     private readonly int planeDefaultX = 10;
     private readonly int planeDefaultY = 10;
@@ -39,7 +37,7 @@ public class MazeGenerator : MonoBehaviour
         {
             for(int z = 0; z < _mazeDepth; z++)
             {
-                _mazeGrid[x, z] = Instantiate(_mazeCellPrefab, new UnityEngine.Vector3(x * wallSize, 0, z * wallSize), UnityEngine.Quaternion.identity, Maze);
+                _mazeGrid[x, z] = Instantiate(_mazeCellPrefab, new UnityEngine.Vector3(x * wallSize, 0, z * wallSize), UnityEngine.Quaternion.identity, transform);
                 _mazeGrid[x, z].Position = new UnityEngine.Vector3(x * wallSize, 0, z * wallSize);
                 // Instantiate a new random item from the list on top of the column
                 if (UnityEngine.Random.Range(1, 100) > 40)
@@ -48,7 +46,7 @@ public class MazeGenerator : MonoBehaviour
                     int objectIndex = UnityEngine. Random.Range(0, topDecorObjects.Length);
 
                     UnityEngine.Vector3 local = _mazeGrid[x, z].topDecorPlaceHolder.transform.position;
-                    _mazeGrid[x, z].topDecorPlaceHolder = Instantiate(topDecorObjects[objectIndex], local, UnityEngine.Quaternion.identity, Maze);
+                    _mazeGrid[x, z].topDecorPlaceHolder = Instantiate(topDecorObjects[objectIndex], local, UnityEngine.Quaternion.identity, transform);
 
                     // Resize objects using random range value
                     float resizeMultiplier = UnityEngine.Random.Range(1.5f, 2.0f);
