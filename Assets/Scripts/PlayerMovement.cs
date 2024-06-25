@@ -37,8 +37,10 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        // Set initial player position to the rigid body
+
+        // Set initial player position to the rigid body and log it
         rb.position = Player.transform.position;
+        Debug.Log("Initial Player Position: " + Player.transform.position);
 
         rb.freezeRotation = true;
     }
@@ -76,14 +78,14 @@ public class PlayerMovement : MonoBehaviour
         verticalInput = Input.GetAxisRaw("Vertical");
 
         // when to jump
-        if (Input.GetKey(jumpKey) && readyToJump && grounded)
-        {
-            readyToJump = false;
+        //if (Input.GetKey(jumpKey) && readyToJump && grounded)
+        //{
+        //    readyToJump = false;
 
-            Jump();
+        //    Jump();
 
-            Invoke(nameof(ResetJump), jumpCooldown);
-        }
+        //    Invoke(nameof(ResetJump), jumpCooldown);
+        //}
     }
 
     private void MovePlayer()
