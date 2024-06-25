@@ -10,7 +10,7 @@ public class PlayerMovement : MonoBehaviour
     public float jumpForce;
     public float jumpCooldown;
     public float airMultiplier;
-    private bool readyToJump = true;
+    //private bool readyToJump = true;
 
     [Header("Keybinds")]
     public KeyCode jumpKey = KeyCode.Space;
@@ -61,10 +61,10 @@ public class PlayerMovement : MonoBehaviour
             rb.drag = 0;
 
         // Rotate player to face the same direction as the camera
-        if (moveDirection.magnitude > 0.1f)
-        {
-            transform.forward = Vector3.Slerp(transform.forward, moveDirection, Time.deltaTime * 10f);
-        }
+        //if (moveDirection.magnitude > 0.1f)
+        //{
+        //    transform.forward = Vector3.Slerp(transform.forward, moveDirection, Time.deltaTime * 10f);
+        //}
     }
 
     private void FixedUpdate()
@@ -138,6 +138,6 @@ public class PlayerMovement : MonoBehaviour
 
     private void ResetJump()
     {
-        readyToJump = true;
+        //readyToJump = true;
     }
 }

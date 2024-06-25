@@ -8,10 +8,6 @@ public class AnimationChange : MonoBehaviour
     void Start()
     {
         animator = GetComponent<Animator>();
-        if (PlayerMovement.rb == null)
-        {
-            Debug.LogError("Rigidbody reference is missing on PlayerMovement.");
-        }
         if (animator == null)
         {
             Debug.LogError("Animator component is missing.");
