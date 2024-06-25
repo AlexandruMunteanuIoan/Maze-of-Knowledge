@@ -30,6 +30,9 @@ public class PlayerMovement : MonoBehaviour
 
     public static Rigidbody rb;
 
+    [SerializeField]
+    private Transform cameraTransform;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -54,6 +57,12 @@ public class PlayerMovement : MonoBehaviour
             rb.drag = groundDrag;
         else
             rb.drag = 0;
+
+        // Rotate player to face the same direction as the camera
+        if (moveDirection.magnitude > 0.1f)
+        {
+            transform.forward = Vector3.Slerp(transform.forward, moveDirection, Time.deltaTime * 10f);
+        }
     }
 
     private void FixedUpdate()
@@ -67,7 +76,7 @@ public class PlayerMovement : MonoBehaviour
         verticalInput = Input.GetAxisRaw("Vertical");
 
         // when to jump
-        if(Input.GetKey(jumpKey) && readyToJump && grounded)
+        if (Input.GetKey(jumpKey) && readyToJump && grounded)
         {
             readyToJump = false;
 
@@ -79,16 +88,30 @@ public class PlayerMovement : MonoBehaviour
 
     private void MovePlayer()
     {
-        // Calculate movement direction
-        moveDirection = orientation.forward * verticalInput + orientation.right * horizontalInput;
+        // Get camera's forward and right vectors
+        Vector3 forward = cameraTransform.forward;
+        Vector3 right = cameraTransform.right;
 
-        // on ground
+        // Project the vectors onto the horizontal plane (y=0)
+        forward.y = 0f;
+        right.y = 0f;
+
+        // Normalize vectors
+        forward.Normalize();
+        right.Normalize();
+
+        // Calculate the movement direction
+        moveDirection = forward * verticalInput + right * horizontalInput;
+
+        // Apply the force based on whether the player is on the ground or in the air
         if (grounded)
+        {
             rb.AddForce(moveDirection.normalized * moveSpeed * 10f, ForceMode.Force);
-
-        // in air
+        }
         else
+        {
             rb.AddForce(moveDirection.normalized * moveSpeed * 10f * airMultiplier, ForceMode.Force);
+        }
     }
 
     private void SpeedControl()
@@ -96,7 +119,7 @@ public class PlayerMovement : MonoBehaviour
         Vector3 flatVel = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
 
         // limit velocity
-        if(flatVel.magnitude > moveSpeed)
+        if (flatVel.magnitude > moveSpeed)
         {
             Vector3 limitedVel = flatVel.normalized * moveSpeed;
             rb.velocity = new Vector3(limitedVel.x, rb.velocity.y, limitedVel.z);
@@ -111,7 +134,7 @@ public class PlayerMovement : MonoBehaviour
         rb.AddForce(transform.up * jumpForce * 100, ForceMode.Force);
     }
 
-    private void ResetJump() 
+    private void ResetJump()
     {
         readyToJump = true;
     }
