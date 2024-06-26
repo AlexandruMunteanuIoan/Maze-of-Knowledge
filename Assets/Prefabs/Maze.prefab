@@ -52,7 +52,15 @@ MonoBehaviour:
   - {fileID: 100000, guid: 1f3ab9073fa6aed4bbec9d3a54b89a27, type: 3}
   - {fileID: 100000, guid: 0e94f8f9621dc254ca920f620b8e454e, type: 3}
   - {fileID: 100000, guid: ddaa7d6b7ae32864ebb3dc8ba1c6dd83, type: 3}
-  plane: {fileID: 0}
+  plane: {fileID: 3239979778444914786, guid: ffcce1e7a913a1b4c9daee134bb32833, type: 3}
   planeMaterial: {fileID: 2100000, guid: 8f18e3d47f3af104fa7e7a358ee4e4d3, type: 2}
   PlayerObject: {fileID: 2462645391076342091, guid: 9e073420b68c2be4884a78a995896fa3,
     type: 3}
+  options: []
+  currentQuestion: 0
+  quizFile: {fileID: 4900000, guid: 1f26fcdd42932f14c8c9d9cfefce8240, type: 3}
+  QuestionText: {fileID: 0}
+  scoreTxt: {fileID: 0}
+  QuizPanel: {fileID: 0}
+  GoPanel: {fileID: 0}
+  score: 0

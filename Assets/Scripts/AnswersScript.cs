@@ -5,17 +5,17 @@ using UnityEngine;
 public class AnsersScript : MonoBehaviour
 {
     public bool isCorrect = false;
-    public QuizManager quizManager;
+    public MazeGenerator quizManager;
 
     public void Answer()
     {
         if (isCorrect)
         {
-            quizManager.correct();
+            quizManager.Correct();
         }
         else
         {
-            quizManager.wrong();
+            quizManager.Wrong();
         }
     }
 
