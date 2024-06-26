@@ -1,11 +1,10 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class FootStepScript : MonoBehaviour
 {
     public GameObject FootStep;
+    private Boolean Active = false;
 
     // Start is called before the first frame update
     void Start()
@@ -17,6 +16,7 @@ public class FootStepScript : MonoBehaviour
     void Update()
     {
         Vector3 accumulatedVelocity = PlayerMovement.rb.velocity;
+        accumulatedVelocity.y = 0f; 
         if (accumulatedVelocity != Vector3.zero)
         {
             FootSteps();
@@ -29,11 +29,21 @@ public class FootStepScript : MonoBehaviour
 
     private void StopFootSteps()
     {
-        FootStep.SetActive(false);
+        if (Active)
+        {
+            FootStep.SetActive(false);
+            FootStep.GetComponent<AudioSource>().Pause();
+            Active = !Active;
+        }
     }
 
     private void FootSteps()
     {
-        FootStep.SetActive(true);
+        if (!Active)
+        {
+            FootStep.SetActive(true);
+            FootStep.GetComponent<AudioSource>().Play();
+            Active = !Active;
+        }
     }
 }
