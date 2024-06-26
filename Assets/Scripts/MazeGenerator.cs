@@ -180,7 +180,7 @@ public class MazeGenerator : MonoBehaviour
         if (playerCellCenter != null)
         {
             playerCellCenter.IsOccupied = true;
-            Vector3 playerPosition = new Vector3(playerCellCenter.Position.x - WallSize / 2f, 1.0f, playerCellCenter.Position.z - WallSize / 2f);
+            Vector3 playerPosition = new Vector3(playerCellCenter.Position.x - WallSize / 2f, 0.5f, playerCellCenter.Position.z - WallSize / 2f);
             PlayerObject.transform.position = playerPosition;
         }
     }
