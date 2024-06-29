@@ -42,11 +42,15 @@ public class GameManager : MonoBehaviour
         if (config == null)
         {
             Debug.LogError("Failed to load GameManagerConfig from Resources folder.");
+            return;
         }
-        else
-        {
-            Debug.Log("Config loaded successfully: " + config.name);
-        }
+
+        MazeWidth = config.MazeWidth;
+        MazeHeight = config.MazeHeight;
+        WallSize = config.WallSize;
+        _mazeCellPrefab = config.mazeCellPrefab;
+        
+        Debug.Log("Config loaded successfully: " + config.name);
     }
 
     private void InitializeComponents()
