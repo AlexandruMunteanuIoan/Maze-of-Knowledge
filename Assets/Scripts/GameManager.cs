@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
     private BookSpawner bookSpawner;
     private PlayerController playerController;
     private QuestionManager questionManager;
+    private TestPointSpawn testPoint;
 
     private int MazeWidth;
     private int MazeHeight;
@@ -82,6 +83,12 @@ public class GameManager : MonoBehaviour
             Debug.LogError("QuestionManager not found in scene.");
             // Optionally, create a new instance or handle the error
         }
+
+        testPoint = FindObjectOfType<TestPointSpawn>();
+        if(testPoint == null)
+        {
+            Debug.LogError("TestPoint not found in scene.");
+        }
     }
 
     public void InitializeGame()
@@ -121,6 +128,7 @@ public class GameManager : MonoBehaviour
 
         playerController.SpawnPlayerInMaze(mazeCellsList, WallSize, MazeHeight, MazeWidth);
         bookSpawner.SpawnBooks(selectedQuestions, mazeCellsList, WallSize);
+        testPoint.SpawnPoint(mazeCellsList, WallSize);
 
         // Additional setup for UI and game state
     }

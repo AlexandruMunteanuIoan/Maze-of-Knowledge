@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 using UnityEngine;
 
@@ -34,7 +35,7 @@ public class QuestionManager : MonoBehaviour
         currentQuestions = new List<Question>();
         for (int i = 0; i < count; i++)
         {
-            int randomIndex = Random.Range(0, allQuestions.Count);
+            int randomIndex = UnityEngine.Random.Range(0, allQuestions.Count);
             currentQuestions.Add(allQuestions[randomIndex]);
             allQuestions.RemoveAt(randomIndex);
         }
@@ -70,7 +71,7 @@ public class QuestionManager : MonoBehaviour
         int QuestionAnswerIndex = -1;
         string QuestionHint = string.Empty;
 
-        string[] lines = quizFile.text.Split('\n');
+        string[] lines = quizFile.text.Split(new[] { '\n' }, StringSplitOptions.RemoveEmptyEntries);
 
         Question currentQuestion = null;
 
@@ -83,29 +84,38 @@ public class QuestionManager : MonoBehaviour
                     allQuestionsLocal.Add(currentQuestion);
                 }
                 QuestionHint = line.Replace("**Hint:**", "").Trim();
+                QuestionText = string.Empty;
+                QuestionAnswers = new List<string>();
+                QuestionAnswerIndex = -1;
+                currentQuestion = null; // Reset current question
             }
             else if (line.StartsWith("**Întrebarea:**"))
             {
                 QuestionText = line.Replace("**Întrebarea:**", "").Trim();
             }
-            else if (line.StartsWith("1.") ||
-                     line.StartsWith("2.") ||
-                     line.StartsWith("3.") ||
-                     line.StartsWith("4."))
+            else if (line.StartsWith("1.") || line.StartsWith("2.") || line.StartsWith("3.") || line.StartsWith("4."))
             {
                 QuestionAnswers.Add(line.Substring(3).Trim());
             }
             else if (line.StartsWith("**Indexul:**"))
             {
                 QuestionAnswerIndex = int.Parse(line.Replace("**Indexul:**", "").Trim()) - 1;
-            }
 
-            currentQuestion = new Question(QuestionText, QuestionAnswers, QuestionAnswerIndex, QuestionHint);
+                // Create a new Question object with collected data
+                currentQuestion = new Question(QuestionText, QuestionAnswers, QuestionAnswerIndex, QuestionHint);
+                allQuestionsLocal.Add(currentQuestion);
+            }
+        }
+
+        // Add the last question if not already added
+        if (currentQuestion != null && !allQuestionsLocal.Contains(currentQuestion))
+        {
             allQuestionsLocal.Add(currentQuestion);
         }
 
         return allQuestionsLocal;
     }
+
 
     //private void GenerateQuestion()
     //{
