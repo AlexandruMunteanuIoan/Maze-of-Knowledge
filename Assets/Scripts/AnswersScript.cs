@@ -9,14 +9,14 @@ public class AnsersScript : MonoBehaviour
 
     public void Answer()
     {
-        if (isCorrect)
-        {
-            quizManager.Correct();
-        }
-        else
-        {
-            quizManager.Wrong();
-        }
+        //if (isCorrect)
+        //{
+        //    quizManager.Correct();
+        //}
+        //else
+        //{
+        //    quizManager.Wrong();
+        //}
     }
 
 }
