@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
-using TMPro;
 
 public class MazeGenerator : MonoBehaviour
 {
@@ -14,20 +13,19 @@ public class MazeGenerator : MonoBehaviour
     //[SerializeField] private GameObject QuizPanel;
     //[SerializeField] private GameObject GoPanel;
     //[SerializeField] private GameObject[] options;
-
-    //private static List<Question> QnA = new List<Question>();
-    [SerializeField] private GameObject[] topDecorObjects;
-
-    [SerializeField] private GameObject plane;
-    [SerializeField] private Material planeMaterial;
-
-    private const int PlaneDefaultX = 10;
-    private const int PlaneDefaultY = 10;
-    private const int PlaneMaterialScaleFactor = 5;
     //private int currentQuestion;
     //private int totalQ;
     //private int score;
 
+    //private static List<Question> QnA = new List<Question>();
+    public GameObject[] topDecorObjects;
+
+    public GameObject plane;
+    public Material planeMaterial;
+
+    private const int PlaneDefaultX = 10;
+    private const int PlaneDefaultY = 10;
+    private const int PlaneMaterialScaleFactor = 5;
 
     private int _mazeWidth;
     private int _mazeDepth;
@@ -35,9 +33,16 @@ public class MazeGenerator : MonoBehaviour
     private MazeCell _mazeCellPrefab;
     private MazeCell[,] _mazeGrid;
     private List<CellCenter> _cellCenters;
+    private GameObject Maze;
+
+    void Awake()
+    {
+        DontDestroyOnLoad(gameObject);
+    }
 
     private void InitializeMaze()
     {
+        Maze = GameObject.Find("Maze");
         float cellHalfSize = _wallSize / 2f;
 
         for (int x = 0; x < _mazeWidth; x++)
@@ -45,15 +50,18 @@ public class MazeGenerator : MonoBehaviour
             for (int z = 0; z < _mazeDepth; z++)
             {
                 Vector3 cellPosition = new Vector3(x * _wallSize + cellHalfSize, 0, z * _wallSize + cellHalfSize);
-                _mazeGrid[x, z] = Instantiate(_mazeCellPrefab, cellPosition, Quaternion.identity, transform);
+                _mazeGrid[x, z] = Instantiate(_mazeCellPrefab, cellPosition, Quaternion.identity, Maze.transform);
                 _mazeGrid[x, z].Position = cellPosition;
-                _cellCenters.Add(new CellCenter(cellPosition));
+
+                // Create a CellCenter with the center position of the maze cell
+                CellCenter center = new CellCenter(cellPosition);
+                _cellCenters.Add(center);
 
                 if (Random.Range(1, 100) > 40)
                 {
                     int objectIndex = Random.Range(0, topDecorObjects.Length);
                     Vector3 local = _mazeGrid[x, z].topDecorPlaceHolder.transform.position;
-                    var decorObject = Instantiate(topDecorObjects[objectIndex], local, Quaternion.identity, transform);
+                    var decorObject = Instantiate(topDecorObjects[objectIndex], local, Quaternion.identity, Maze.transform);
 
                     float resizeMultiplier = Random.Range(1.5f, 2.0f);
                     decorObject.transform.localScale = new Vector3(resizeMultiplier, resizeMultiplier, resizeMultiplier);
@@ -73,6 +81,7 @@ public class MazeGenerator : MonoBehaviour
             }
         }
     }
+
 
     private void GenerateMaze(MazeCell previousCell, MazeCell currentCell)
     {
@@ -161,7 +170,7 @@ public class MazeGenerator : MonoBehaviour
 
     internal void ClearMaze()
     {
-        throw new System.NotImplementedException();
+        //throw new System.NotImplementedException();
     }
 
     public List<CellCenter> CreateMaze(int _mazeWidth, int _mazeDepth, int _wallSize, MazeCell _mazeCellPrefab)

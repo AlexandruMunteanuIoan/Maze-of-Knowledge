@@ -1,15 +1,21 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class GameManagerInitializer : MonoBehaviour
 {
-    private void Awake()
+    public GameManagerConfig config;
+
+    private void Start()
     {
-        // Ensure GameManager is initialized
+        InitializeGameManager();
+    }
+
+    private void InitializeGameManager()
+    {
         if (GameManager.Instance == null)
         {
-            GameObject gameManager = new GameObject("GameManager");
-            gameManager.AddComponent<GameManager>();
+            GameObject gameManagerObject = new GameObject("GameManager");
+            GameManager gameManagerComponent = gameManagerObject.AddComponent<GameManager>();
+            gameManagerComponent.config = config;
         }
     }
 }

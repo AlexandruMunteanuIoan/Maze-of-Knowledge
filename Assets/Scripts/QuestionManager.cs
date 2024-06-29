@@ -9,9 +9,6 @@ public class QuestionManager : MonoBehaviour
     public List<Question> allQuestions;
     private List<Question> currentQuestions;
 
-
-    public TextAsset quizFile;
-
     private void Awake()
     {
         // Singleton pattern to ensure only one instance of QuestionManager exists
@@ -26,7 +23,7 @@ public class QuestionManager : MonoBehaviour
         }
     }
 
-    public void LoadQuestions()
+    public void LoadQuestions(TextAsset quizFile)
     {
         // Load questions from a file, database, or other resource
         allQuestions = ParseDocument(quizFile);

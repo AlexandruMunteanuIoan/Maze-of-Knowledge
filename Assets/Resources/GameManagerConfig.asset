@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 075a6afdff4e8c043963b69457a613d6, type: 3}
+  m_Name: GameManagerConfig
+  m_EditorClassIdentifier: 
+  MazeWidth: 10
+  MazeHeight: 20
+  WallSize: 4
+  mazeCellPrefab: {fileID: 2477072374925733959, guid: 5f9cc2ddcfc824647893c3ddea935490,
+    type: 3}
+  playerObj: {fileID: 2462645391076342091, guid: 9e073420b68c2be4884a78a995896fa3,
+    type: 3}
+  quizFile: {fileID: 4900000, guid: 1f26fcdd42932f14c8c9d9cfefce8240, type: 3}
+  moveSpeed: 4
+  groundDrag: 5
+  airMultiplier: 1
+  playerHeight: 1
+  whatIsGround:
+    serializedVersion: 2
+    m_Bits: 8

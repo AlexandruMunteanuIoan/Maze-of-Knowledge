@@ -30,8 +30,7 @@ public class PlayerMovement : MonoBehaviour
 
     public static Rigidbody rb;
 
-    [SerializeField]
-    private Transform cameraTransform;
+    public Transform cameraTransform;
 
     // Start is called before the first frame update
     void Start()

@@ -1,23 +1,8 @@
-using System;
-using System.Runtime.CompilerServices;
-
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    private CharacterController controller;
-
-    [SerializeField] private GameObject PlayerObject;
-
-    void Start()
-    {
-        controller = GetComponent<CharacterController>();
-    }
-
-    void Update()
-    {
-        // Implement player movement logic
-    }
+    public GameObject PlayerObject;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -38,15 +23,26 @@ public class PlayerController : MonoBehaviour
         // Display hint to the player
     }
 
-    internal void SpawnPlayerInMaze(System.Collections.Generic.List<CellCenter> mazeCellsList, int wallSize)
+    internal void SpawnPlayerInMaze(System.Collections.Generic.List<CellCenter> mazeCellsList, int wallSize, int mazeHeight, int mazeWidth)
     {
+        CellCenter playerCellCenter;
+        do
+        {
+            playerCellCenter = MazeGenerator.GetRandomAvailableCellCenter(mazeCellsList);
+        } while (playerCellCenter.Position.x > ((mazeWidth - 2) * wallSize) ||
+                 playerCellCenter.Position.z > ((mazeHeight - 2) * wallSize));
+        
 
-        CellCenter playerCellCenter = MazeGenerator.GetRandomAvailableCellCenter(mazeCellsList);
-        if (playerCellCenter != null)
+        if (playerCellCenter != null && !playerCellCenter.IsOccupied)
         {
             playerCellCenter.IsOccupied = true;
             Vector3 playerPosition = new Vector3(playerCellCenter.Position.x - wallSize / 2f, 0.5f, playerCellCenter.Position.z - wallSize / 2f);
-            GameObject playerObjectTemp = Instantiate(PlayerObject, playerPosition, Quaternion.identity);
+            playerPosition -= new Vector3(wallSize / 2f, 0, wallSize / 2f);
+            PlayerObject.transform.position = playerCellCenter.Position;
+        }
+        else
+        {
+            Debug.LogError("Player couldn't be moved where needed");
         }
     }
 }
