@@ -36,8 +36,9 @@ public class QuestionBook : MonoBehaviour
 
         if (playerInventory != null)
         {
-            playerInventory.QuestionsCollected();
-            gameObject.SetActive(false);
+            playerInventory.CollectQuestion(this.question);
+            Destroy(gameObject);
+            //gameObject.SetActive(false);
         }
     }
 }
