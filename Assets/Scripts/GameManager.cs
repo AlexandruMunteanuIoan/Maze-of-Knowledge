@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Collections.Generic;
+using System;
 
 public class GameManager : MonoBehaviour
 {
@@ -155,12 +156,13 @@ public class GameManager : MonoBehaviour
         if (unansweredQuestions.Count == 0)
         {
             // All questions answered correctly, generate next maze
-            SetupNewMaze();
+            //SetupNewMaze();
+            throw new NotImplementedException();
         }
         else
         {
             // Handle unanswered questions
-            bookSpawner.RespawnBooks(unansweredQuestions);
+            bookSpawner.SpawnBooks(unansweredQuestions, mazeCellsList, WallSize);
         }
     }
 

@@ -9,6 +9,8 @@ public class PlayerInventory : MonoBehaviour
     
     public void CollectQuestion(Question question)
     {
+        questions ??= new List<Question>();
+
         questions.Add(question);
         NumberOfQuestions++;
     }

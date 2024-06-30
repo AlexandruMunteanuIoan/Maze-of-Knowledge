@@ -52,6 +52,14 @@ public class PauseManager : MonoBehaviour
             pauseCanvas.enabled = true; // Show the pause UI
             minimapCanvas.enabled = false;
             gameTimerCanvas.enabled= false;
+
+            if(QuizManager.Instance != null)
+            {
+                if (QuizManager.quizStarted)
+                {
+                    QuizManager.Instance.quizCanvas.SetActive(false);
+                }
+            }
         }
         else
         {
@@ -72,6 +80,18 @@ public class PauseManager : MonoBehaviour
             pauseCanvas.enabled = false; // Hide the pause UI
             minimapCanvas.enabled = true;
             gameTimerCanvas.enabled = true;
+
+            if (QuizManager.Instance != null)
+            {
+                if (QuizManager.quizStarted)
+                {
+                    Time.timeScale = 0f; // Pause the game
+                    Cursor.lockState = CursorLockMode.None;
+                    Cursor.visible = true; // Show the mouse pointer
+
+                    QuizManager.Instance.quizCanvas.SetActive(true);
+                }
+            }
         }
         else
         {

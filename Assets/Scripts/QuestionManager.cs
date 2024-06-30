@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 using UnityEngine;
 
@@ -12,7 +11,6 @@ public class QuestionManager : MonoBehaviour
 
     private void Awake()
     {
-        // Singleton pattern to ensure only one instance of QuestionManager exists
         if (Instance == null)
         {
             Instance = this;
@@ -26,7 +24,6 @@ public class QuestionManager : MonoBehaviour
 
     public void LoadQuestions(TextAsset quizFile)
     {
-        // Load questions from a file, database, or other resource
         allQuestions = ParseDocument(quizFile);
     }
 
@@ -47,21 +44,6 @@ public class QuestionManager : MonoBehaviour
         return currentQuestions;
     }
 
-    public void CollectQuestion(Question question)
-    {
-        // Logic to handle when a question is collected by the player
-    }
-
-    public void StartQuiz()
-    {
-        // Show quiz UI
-    }
-
-    public void ProcessQuizResults(List<Question> unansweredQuestions)
-    {
-        // Handle unanswered questions
-    }
-
     private List<Question> ParseDocument(TextAsset quizFile)
     {
         List<Question> allQuestionsLocal = new List<Question>();
@@ -71,7 +53,7 @@ public class QuestionManager : MonoBehaviour
         int QuestionAnswerIndex = -1;
         string QuestionHint = string.Empty;
 
-        string[] lines = quizFile.text.Split(new[] { '\n' }, StringSplitOptions.RemoveEmptyEntries);
+        string[] lines = quizFile.text.Split(new[] { '\n' }, System.StringSplitOptions.RemoveEmptyEntries);
 
         Question currentQuestion = null;
 
@@ -87,7 +69,7 @@ public class QuestionManager : MonoBehaviour
                 QuestionText = string.Empty;
                 QuestionAnswers = new List<string>();
                 QuestionAnswerIndex = -1;
-                currentQuestion = null; // Reset current question
+                currentQuestion = null;
             }
             else if (line.StartsWith("**Întrebarea:**"))
             {
@@ -95,87 +77,22 @@ public class QuestionManager : MonoBehaviour
             }
             else if (line.StartsWith("1.") || line.StartsWith("2.") || line.StartsWith("3.") || line.StartsWith("4."))
             {
-                QuestionAnswers.Add(line.Substring(3).Trim());
+                QuestionAnswers.Add(line.Substring(line.IndexOf('.') + 1).Trim());
             }
             else if (line.StartsWith("**Indexul:**"))
             {
-                QuestionAnswerIndex = int.Parse(line.Replace("**Indexul:**", "").Trim()) - 1;
-
-                // Create a new Question object with collected data
+                QuestionAnswerIndex = int.Parse(line.Replace("**Indexul:**", "").Trim());
                 currentQuestion = new Question(QuestionText, QuestionAnswers, QuestionAnswerIndex, QuestionHint);
                 allQuestionsLocal.Add(currentQuestion);
+                currentQuestion = null;
             }
         }
 
-        // Add the last question if not already added
-        if (currentQuestion != null && !allQuestionsLocal.Contains(currentQuestion))
+        if (currentQuestion != null)
         {
             allQuestionsLocal.Add(currentQuestion);
         }
 
         return allQuestionsLocal;
     }
-
-
-    //private void GenerateQuestion()
-    //{
-    //    if (QnA.Count > 0)
-    //    {
-    //        currentQuestion = Random.Range(0, QnA.Count);
-    //        QuestionText.text = QnA[currentQuestion].Question;
-    //        SetAnswer();
-    //    }
-    //    else
-    //    {
-    //        GameOver();
-    //    }
-    //}
-
-    //private void SetAnswer()
-    //{
-    //    for (int i = 0; i < options.Length; i++)
-    //    {
-    //        options[i].GetComponent<AnsersScript>().isCorrect = false;
-    //        options[i].transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = QnA[currentQuestion].Answers[i];
-
-    //        if (QnA[currentQuestion].CorrectAnswer == i)
-    //        {
-    //            options[i].GetComponent<AnsersScript>().isCorrect = true;
-    //        }
-    //    }
-    //}
-
-    //public void Correct()
-    //{
-    //    score += 1;
-    //    QnA.RemoveAt(currentQuestion);
-    //    GenerateQuestion();
-    //}
-
-    //public void Wrong()
-    //{
-    //    QnA.RemoveAt(currentQuestion);
-    //    GenerateQuestion();
-    //}
-
-    public void GameOver()
-    {
-        //QuizPanel.SetActive(false);
-        //GoPanel.SetActive(true);
-        //scoreTxt.text = $"{score}/{totalQ}";
-    }
-
-    //SpawnPlayer();
-
-    //if (quizFile != null)
-    //{
-    //    ParseDocument(quizFile);
-    //    SelectRandomQuestions();
-    //    totalQ = QnA.Count;
-    //    SpawnQuestionsInMaze();
-    //}
-    //else
-    //{
-    //    Debug.LogError("Quiz file is not assigned in the Inspector.");
-    //}
 }

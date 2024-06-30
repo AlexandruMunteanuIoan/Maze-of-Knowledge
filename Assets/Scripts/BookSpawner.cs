@@ -1,6 +1,5 @@
 using UnityEngine;
 using System.Collections.Generic;
-using System;
 
 public class BookSpawner : MonoBehaviour
 {
@@ -21,11 +20,5 @@ public class BookSpawner : MonoBehaviour
             QuestionBook questionBook = bookObject.GetComponent<QuestionBook>();
             questionBook.SetQuestion(questions[i]);
         }
-    }
-
-    public void RespawnBooks(List<Question> unansweredQuestions)
-    {
-        //SpawnBooks(unansweredQuestions);
-        throw new NotImplementedException();
     }
 }

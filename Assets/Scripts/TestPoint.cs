@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+
 using UnityEngine;
 
 public class TestPoint : MonoBehaviour
@@ -9,6 +11,12 @@ public class TestPoint : MonoBehaviour
         if (playerInventory != null)
         {
             //playerInventory.questions;
+            if (playerInventory.questions.Count > 0)
+            {
+
+                QuizManager.Instance.StartQuiz(playerInventory.questions);
+                playerInventory.questions = new List<Question>();
+            }
         }
     }
 }
