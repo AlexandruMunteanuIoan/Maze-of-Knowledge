@@ -5,6 +5,9 @@ public class PauseManager : MonoBehaviour
 {
     public Canvas pauseCanvas; // Reference to the Canvas containing your pause UI
     public Canvas minimapCanvas;
+    public Canvas gameTimerCanvas;
+    public GameTimer gameTimer;
+
     public static bool isPaused = false;
 
     void Start()
@@ -12,11 +15,14 @@ public class PauseManager : MonoBehaviour
         //pauseCanvas = GetComponent<Canvas>();
         pauseCanvas = GameObject.Find("PauseCanvas").GetComponent<Canvas>();
         minimapCanvas = GameObject.Find("MinimapView").GetComponent<Canvas>();
+        gameTimerCanvas = GameObject.Find("GameTimer").GetComponent<Canvas>();
+        gameTimer = FindObjectOfType<GameTimer>();
         // Hide the canvas at the start
         if (pauseCanvas != null)
         {
             pauseCanvas.enabled = false;
             minimapCanvas.enabled = true;
+            gameTimerCanvas.enabled = true;
         }
         else
         {
@@ -41,15 +47,17 @@ public class PauseManager : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true; // Show the mouse pointer
 
-        if (pauseCanvas != null)
+        if (pauseCanvas != null && minimapCanvas != null)
         {
             pauseCanvas.enabled = true; // Show the pause UI
             minimapCanvas.enabled = false;
+            gameTimerCanvas.enabled= false;
         }
         else
         {
             Debug.LogError("Pause Canvas is not assigned in the Inspector!");
         }
+        gameTimer.StopTimer();
     }
 
     public void ResumeGame()
@@ -59,15 +67,18 @@ public class PauseManager : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false; // Hide the mouse pointer
 
-        if (pauseCanvas != null)
+        if (pauseCanvas != null && minimapCanvas != null)
         {
             pauseCanvas.enabled = false; // Hide the pause UI
             minimapCanvas.enabled = true;
+            gameTimerCanvas.enabled = true;
         }
         else
         {
             Debug.LogError("Pause Canvas is not assigned in the Inspector!");
         }
+
+        gameTimer.StartTimer();
     }
 
     public void ExitMenu()

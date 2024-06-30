@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     private PlayerController playerController;
     private QuestionManager questionManager;
     private TestPointSpawn testPoint;
+    private GameTimer gameTimer;
 
     private int MazeWidth;
     private int MazeHeight;
@@ -89,6 +90,12 @@ public class GameManager : MonoBehaviour
         {
             Debug.LogError("TestPoint not found in scene.");
         }
+
+        gameTimer = FindObjectOfType<GameTimer>();
+        if(gameTimer == null)
+        {
+            Debug.LogError("GameTimer not found in scene.");
+        }
     }
 
     public void InitializeGame()
@@ -108,6 +115,16 @@ public class GameManager : MonoBehaviour
         {
             InitializeComponents();
             SetupNewMaze();
+
+            //if (gameTimer != null)
+            //{
+            //    gameTimer.StartTimer();
+            //    Debug.Log("Timer started.");
+            //}
+            //else
+            //{
+            //    Debug.LogError("Failed to start timer: GameTimer is null.");
+            //}
         }
     }
 
