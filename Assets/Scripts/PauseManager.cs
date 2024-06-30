@@ -112,8 +112,8 @@ public class PauseManager : MonoBehaviour
         // Destroy all game objects
         foreach (GameObject obj in allObjects)
         {
-            if (obj.CompareTag("MainCamera") || obj.CompareTag("Persistent"))
-                continue;
+            //if (obj.CompareTag("MainCamera") || obj.CompareTag("Persistent"))
+            //    continue;
 
             Destroy(obj);
         }

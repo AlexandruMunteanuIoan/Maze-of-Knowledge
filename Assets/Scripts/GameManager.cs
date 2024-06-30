@@ -155,9 +155,30 @@ public class GameManager : MonoBehaviour
     {
         if (unansweredQuestions.Count == 0)
         {
+            GameObject[] bookInScene = GameObject.FindGameObjectsWithTag("Book");
+            if(bookInScene.Length != 0)
+            {
+                return;
+            }
+
             // All questions answered correctly, generate next maze
-            //SetupNewMaze();
             throw new NotImplementedException();
+
+            Time.timeScale = 1f; // Resume normal time scale
+
+            Scene currentScene = SceneManager.GetActiveScene();
+            GameObject[] allObjects = GameObject.FindObjectsOfType<GameObject>();
+
+            foreach (GameObject obj in allObjects)
+            {
+                if (obj.scene == currentScene)
+                {
+                    Destroy(obj);
+                }
+            }
+
+            // Load the menu scene
+            SceneManager.LoadScene("GameScene");
         }
         else
         {
