@@ -4,14 +4,19 @@ using UnityEngine.SceneManagement;
 public class PauseManager : MonoBehaviour
 {
     public Canvas pauseCanvas; // Reference to the Canvas containing your pause UI
+    public Canvas minimapCanvas;
     public static bool isPaused = false;
 
     void Start()
     {
+        //pauseCanvas = GetComponent<Canvas>();
+        pauseCanvas = GameObject.Find("PauseCanvas").GetComponent<Canvas>();
+        minimapCanvas = GameObject.Find("MinimapView").GetComponent<Canvas>();
         // Hide the canvas at the start
         if (pauseCanvas != null)
         {
             pauseCanvas.enabled = false;
+            minimapCanvas.enabled = true;
         }
         else
         {
@@ -39,6 +44,7 @@ public class PauseManager : MonoBehaviour
         if (pauseCanvas != null)
         {
             pauseCanvas.enabled = true; // Show the pause UI
+            minimapCanvas.enabled = false;
         }
         else
         {
@@ -56,6 +62,7 @@ public class PauseManager : MonoBehaviour
         if (pauseCanvas != null)
         {
             pauseCanvas.enabled = false; // Hide the pause UI
+            minimapCanvas.enabled = true;
         }
         else
         {
