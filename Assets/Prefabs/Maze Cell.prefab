@@ -11,12 +11,12 @@ GameObject:
   - component: {fileID: 8783234200868145584}
   - component: {fileID: 5283346335050652448}
   - component: {fileID: 988173470306826694}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Spot Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 1
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &8783234200868145584
 Transform:
@@ -128,12 +128,12 @@ GameObject:
   m_Component:
   - component: {fileID: 4445459997339266551}
   - component: {fileID: 2477072374925733959}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Maze Cell
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 1
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &4445459997339266551
 Transform:
@@ -190,12 +190,12 @@ GameObject:
   m_Component:
   - component: {fileID: 3826792186478455902}
   - component: {fileID: 2316014535780464314}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Unvisited Block
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 1
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &3826792186478455902
 Transform:
@@ -246,8 +246,12 @@ PrefabInstance:
       value: Column
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 1bff7d79ae1b141448f2db1e49eb3c81, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 1bff7d79ae1b141448f2db1e49eb3c81, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 1
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 1bff7d79ae1b141448f2db1e49eb3c81, type: 3}
       propertyPath: m_LocalPosition.x
@@ -358,8 +362,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3062635603677056429, guid: 484ee5289c6da7144ba885ce455e391d,
         type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3062635603677056429, guid: 484ee5289c6da7144ba885ce455e391d,
+        type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 1
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 3823542117375580383, guid: 484ee5289c6da7144ba885ce455e391d,
         type: 3}
@@ -487,8 +496,12 @@ PrefabInstance:
       value: Right Wall
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: e8979abd969459f44a279ae0a501e977, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: e8979abd969459f44a279ae0a501e977, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 1
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: e8979abd969459f44a279ae0a501e977, type: 3}
       propertyPath: m_LocalPosition.x
@@ -597,8 +610,12 @@ PrefabInstance:
       value: Back Wall
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: e8979abd969459f44a279ae0a501e977, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: e8979abd969459f44a279ae0a501e977, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 1
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: e8979abd969459f44a279ae0a501e977, type: 3}
       propertyPath: m_LocalPosition.x
@@ -707,12 +724,16 @@ PrefabInstance:
       value: Front Decor
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: cde161403e4daa841897213ea28384a5, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: cde161403e4daa841897213ea28384a5, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: cde161403e4daa841897213ea28384a5, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 1
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: cde161403e4daa841897213ea28384a5, type: 3}
       propertyPath: m_LocalPosition.x
@@ -788,8 +809,12 @@ PrefabInstance:
       value: Front Wall
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: e8979abd969459f44a279ae0a501e977, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: e8979abd969459f44a279ae0a501e977, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 1
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: e8979abd969459f44a279ae0a501e977, type: 3}
       propertyPath: m_LocalPosition.x
@@ -898,8 +923,12 @@ PrefabInstance:
       value: Left Wall
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: e8979abd969459f44a279ae0a501e977, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: e8979abd969459f44a279ae0a501e977, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 1
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: e8979abd969459f44a279ae0a501e977, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1008,12 +1037,16 @@ PrefabInstance:
       value: Back Decor
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: a572b7e4c3d8eb446823b4269e41cb5d, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: a572b7e4c3d8eb446823b4269e41cb5d, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: a572b7e4c3d8eb446823b4269e41cb5d, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 1
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: a572b7e4c3d8eb446823b4269e41cb5d, type: 3}
       propertyPath: m_LocalPosition.x

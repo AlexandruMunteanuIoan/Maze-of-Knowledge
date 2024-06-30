@@ -13,11 +13,11 @@ TagManager:
   - Ground
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Maze
+  - Player
+  - Book
+  - TestPoint
+  - CustomLight
   - 
   - 
   - 

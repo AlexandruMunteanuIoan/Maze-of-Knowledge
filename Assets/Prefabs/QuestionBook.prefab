@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4425986431678994393}
   - component: {fileID: -3222867616983684337}
   - component: {fileID: 5441100318928706532}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: QuestionBook
   m_TagString: Book
   m_Icon: {fileID: 0}
@@ -129,6 +129,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: book
+      objectReference: {fileID: 0}
+    - target: {fileID: 3479499227772113986, guid: 6df710fc0bdb5324f9956e30363e1a78,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
