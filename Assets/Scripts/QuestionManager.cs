@@ -71,9 +71,9 @@ public class QuestionManager : MonoBehaviour
                 QuestionAnswerIndex = -1;
                 currentQuestion = null;
             }
-            else if (line.StartsWith("**Întrebarea:**"))
+            else if (line.StartsWith("**Intrebarea:**"))
             {
-                QuestionText = line.Replace("**Întrebarea:**", "").Trim();
+                QuestionText = line.Replace("**Intrebarea:**", "").Trim();
             }
             else if (line.StartsWith("1.") || line.StartsWith("2.") || line.StartsWith("3.") || line.StartsWith("4."))
             {

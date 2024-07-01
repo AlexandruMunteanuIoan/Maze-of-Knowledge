@@ -1,8 +1,8 @@
-**Hint:** În C, pentru a citi date de la tastatură se folosește funcția `scanf`. Aceasta permite citirea diferitelor tipuri de date (int, float, char) și stocarea lor în variabile.
+**Hint:** In C, pentru a citi date de la tastatura se foloseste functia `scanf`. Aceasta permite citirea diferitelor tipuri de date (int, float, char) si stocarea lor In variabile.
 
-**Întrebarea:** Care funcție se folosește în limbajul C pentru a citi date de la tastatură?
+**Intrebarea:** Care functie se foloseste In limbajul C pentru a citi date de la tastatura?
 
-**Răspunsuri:**
+**Raspunsuri:**
 1. printf
 2. read
 3. scanf
@@ -10,35 +10,35 @@
 
 **Indexul:** 2
 
-**Hint:** În programarea orientată pe obiecte, o clasă este un șablon pentru crearea obiectelor. Clasa definește atributele și comportamentele obiectelor care vor fi instanțiate din ea.
+**Hint:** In programarea orientata pe obiecte, o clasa este un sablon pentru crearea obiectelor. Clasa defineste atributele si comportamentele obiectelor care vor fi instantiate din ea.
 
-**Întrebarea:** Ce reprezintă o clasă în programarea orientată pe obiecte?
+**Intrebarea:** Ce reprezinta o clasa In programarea orientata pe obiecte?
 
-**Răspunsuri:**
-1. Un set de instrucțiuni pentru calculator.
-2. Un șablon pentru crearea obiectelor.
-3. O colecție de funcții globale.
-4. O interfață grafică pentru utilizator.
+**Raspunsuri:**
+1. Un set de instructiuni pentru calculator.
+2. Un sablon pentru crearea obiectelor.
+3. O colectie de functii globale.
+4. O interfata grafica pentru utilizator.
 
 **Indexul:** 1
 
-**Hint:** Metoda bisectională este o tehnică de găsire a rădăcinilor unei funcții continue. Aceasta funcționează prin repetata împărțire a intervalului în jumătate și alegerea subintervalului care conține rădăcina.
+**Hint:** Metoda bisectionala este o tehnica de gasire a radacinilor unei functii continue. Aceasta functioneaza prin repetata Impartire a intervalului In jumatate si alegerea subintervalului care contine radacina.
 
-**Întrebarea:** Ce metodă numerică folosește împărțirea repetată a unui interval pentru a găsi rădăcina unei funcții?
+**Intrebarea:** Ce metoda numerica foloseste Impartirea repetata a unui interval pentru a gasi radacina unei functii?
 
-**Răspunsuri:**
+**Raspunsuri:**
 1. Metoda Newton-Raphson.
 2. Metoda trapezului.
-3. Metoda bisectională.
+3. Metoda bisectionala.
 4. Metoda Gauss-Seidel.
 
 **Indexul:** 2
 
-**Hint:** Legea lui Ohm stipulează că tensiunea electrică printr-un conductor între două puncte este direct proporțională cu curentul electric care trece prin conductor și invers proporțională cu rezistența acestuia. Formula este \( V = I \cdot R \).
+**Hint:** Legea lui Ohm stipuleaza ca tensiunea electrica printr-un conductor Intre doua puncte este direct proportionala cu curentul electric care trece prin conductor si invers proportionala cu rezistenta acestuia. Formula este \( V = I \cdot R \).
 
-**Întrebarea:** Care este formula legii lui Ohm?
+**Intrebarea:** Care este formula legii lui Ohm?
 
-**Răspunsuri:**
+**Raspunsuri:**
 1. \( V = I / R \)
 2. \( V = I \cdot R \)
 3. \( V = R / I \)
@@ -46,11 +46,11 @@
 
 **Indexul:** 1
 
-**Hint:** Algoritmul Bresenham este folosit pentru desenarea liniilor drepte pe o grafică rasterizată. Este cunoscut pentru eficiența sa, folosind doar adunări și scăderi întregi.
+**Hint:** Algoritmul Bresenham este folosit pentru desenarea liniilor drepte pe o grafica rasterizata. Este cunoscut pentru eficienta sa, folosind doar adunari si scaderi Intregi.
 
-**Întrebarea:** Ce algoritm este folosit pentru desenarea liniilor drepte pe o grafică rasterizată?
+**Intrebarea:** Ce algoritm este folosit pentru desenarea liniilor drepte pe o grafica rasterizata?
 
-**Răspunsuri:**
+**Raspunsuri:**
 1. Algoritmul Dijkstra.
 2. Algoritmul Bresenham.
 3. Algoritmul Prim.
@@ -58,23 +58,23 @@
 
 **Indexul:** 1
 
-**Hint:** Textura în grafică pe calculator se referă la o imagine aplicată pe suprafața unui obiect 3D pentru a-i oferi detalii vizuale, cum ar fi culoarea sau structura.
+**Hint:** Textura In grafica pe calculator se refera la o imagine aplicata pe suprafata unui obiect 3D pentru a-i oferi detalii vizuale, cum ar fi culoarea sau structura.
 
-**Întrebarea:** Ce reprezintă textura în grafică pe calculator?
+**Intrebarea:** Ce reprezinta textura In grafica pe calculator?
 
-**Răspunsuri:**
+**Raspunsuri:**
 1. Un algoritm de comprimare a imaginii.
-2. O imagine aplicată pe suprafața unui obiect 3D.
+2. O imagine aplicata pe suprafata unui obiect 3D.
 3. Un tip de model 3D.
-4. O tehnică de iluminare a scenelor.
+4. O tehnica de iluminare a scenelor.
 
 **Indexul:** 1
 
-**Hint:** În HTML, eticheta `<a>` este folosită pentru a crea hyperlinkuri. Atributul `href` specifică adresa URL la care va naviga utilizatorul când face clic pe link.
+**Hint:** In HTML, eticheta `<a>` este folosita pentru a crea hyperlinkuri. Atributul `href` specifica adresa URL la care va naviga utilizatorul cand face clic pe link.
 
-**Întrebarea:** Ce etichetă HTML este folosită pentru a crea un hyperlink?
+**Intrebarea:** Ce eticheta HTML este folosita pentru a crea un hyperlink?
 
-**Răspunsuri:**
+**Raspunsuri:**
 1. `<link>`
 2. `<a>`
 3. `<href>`
@@ -82,35 +82,35 @@
 
 **Indexul:** 1
 
-**Hint:** O poartă logică AND are două sau mai multe intrări și o singură ieșire. Ieșirea este 1 doar dacă toate intrările sunt 1.
+**Hint:** O poarta logica AND are doua sau mai multe intrari si o singura iesire. Iesirea este 1 doar daca toate intrarile sunt 1.
 
-**Întrebarea:** Care este condiția pentru ca ieșirea unei porți logice AND să fie 1?
+**Intrebarea:** Care este conditia pentru ca iesirea unei porti logice AND sa fie 1?
 
-**Răspunsuri:**
-1. Cel puțin una dintre intrări trebuie să fie 1.
-2. Toate intrările trebuie să fie 1.
-3. Cel puțin una dintre intrări trebuie să fie 0.
-4. Toate intrările trebuie să fie 0.
+**Raspunsuri:**
+1. Cel putin una dintre intrari trebuie sa fie 1.
+2. Toate intrarile trebuie sa fie 1.
+3. Cel putin una dintre intrari trebuie sa fie 0.
+4. Toate intrarile trebuie sa fie 0.
 
 **Indexul:** 1
 
-**Hint:** Legea gravitației universale a lui Newton afirmă că orice două obiecte se atrag reciproc cu o forță direct proporțională cu produsul maselor lor și invers proporțională cu pătratul distanței dintre ele.
+**Hint:** Legea gravitatiei universale a lui Newton afirma ca orice doua obiecte se atrag reciproc cu o forta direct proportionala cu produsul maselor lor si invers proportionala cu patratul distantei dintre ele.
 
-**Întrebarea:** Conform legii gravitației universale a lui Newton, de ce depinde forța de atracție gravitațională între două obiecte?
+**Intrebarea:** Conform legii gravitatiei universale a lui Newton, de ce depinde forta de atractie gravitationala Intre doua obiecte?
 
-**Răspunsuri:**
+**Raspunsuri:**
 1. Doar de masele obiectelor.
-2. Doar de distanța dintre obiecte.
-3. De produsul maselor și invers proporțional de pătratul distanței dintre ele.
-4. De produsul maselor și invers proporțional de distanța dintre ele.
+2. Doar de distanta dintre obiecte.
+3. De produsul maselor si invers proportional de patratul distantei dintre ele.
+4. De produsul maselor si invers proportional de distanta dintre ele.
 
 **Indexul:** 2
 
-**Hint:** Un flip-flop este un circuit digital bistabil care poate stoca un bit de informație. Are două stări stabile și poate schimba starea în funcție de semnalele de intrare.
+**Hint:** Un flip-flop este un circuit digital bistabil care poate stoca un bit de informatie. Are doua stari stabile si poate schimba starea In functie de semnalele de intrare.
 
-**Întrebarea:** Ce tip de circuit digital este folosit pentru stocarea unui singur bit de informație?
+**Intrebarea:** Ce tip de circuit digital este folosit pentru stocarea unui singur bit de informatie?
 
-**Răspunsuri:**
+**Raspunsuri:**
 1. Multiplexor.
 2. De-multiplexor.
 3. Flip-flop.
@@ -118,23 +118,23 @@
 
 **Indexul:** 2
 
-**Hint:** Principiul WYSIWYG (What You See Is What You Get) înseamnă că ceea ce vede utilizatorul pe ecran în timpul editării este exact ceea ce va obține la ieșire.
+**Hint:** Principiul WYSIWYG (What You See Is What You Get) Inseamna ca ceea ce vede utilizatorul pe ecran In timpul editarii este exact ceea ce va obtine la iesire.
 
-**Întrebarea:** Ce înseamnă principiul WYSIWYG în proiectarea interfețelor utilizator?
+**Intrebarea:** Ce Inseamna principiul WYSIWYG In proiectarea interfetelor utilizator?
 
-**Răspunsuri:**
-1. Utilizatorul poate vedea doar codul sursă al interfeței.
-2. Utilizatorul vede o previzualizare a interfeței în timp real, dar rezultatul poate fi diferit.
-3. Utilizatorul vede exact ceea ce va obține la ieșire.
-4. Utilizatorul nu poate vedea interfața în timpul editării.
+**Raspunsuri:**
+1. Utilizatorul poate vedea doar codul sursa al interfetei.
+2. Utilizatorul vede o previzualizare a interfetei In timp real, dar rezultatul poate fi diferit.
+3. Utilizatorul vede exact ceea ce va obtine la iesire.
+4. Utilizatorul nu poate vedea interfata In timpul editarii.
 
 **Indexul:** 2
 
-**Hint:** În Python, funcția `len()` este utilizată pentru a obține lungimea unui șir de caractere, a unei liste sau a altor colecții.
+**Hint:** In Python, functia `len()` este utilizata pentru a obtine lungimea unui sir de caractere, a unei liste sau a altor colectii.
 
-**Întrebarea:** Care funcție în Python este utilizată pentru a obține lungimea unei liste?
+**Intrebarea:** Care functie In Python este utilizata pentru a obtine lungimea unei liste?
 
-**Răspunsuri:**
+**Raspunsuri:**
 1. length()
 2. size()
 3. len()
@@ -142,35 +142,35 @@
 
 **Indexul:** 2
 
-**Hint:** Moștenirea este un concept din programarea orientată pe obiecte care permite unei clase să moștenească atribute și metode de la o altă clasă.
+**Hint:** Mostenirea este un concept din programarea orientata pe obiecte care permite unei clase sa mosteneasca atribute si metode de la o alta clasa.
 
-**Întrebarea:** Ce concept OOP permite unei clase să moștenească atribute și metode de la o altă clasă?
+**Intrebarea:** Ce concept OOP permite unei clase sa mosteneasca atribute si metode de la o alta clasa?
 
-**Răspunsuri:**
+**Raspunsuri:**
 1. Polimorfismul
 2. Incapsularea
-3. Moștenirea
-4. Abstracția
+3. Mostenirea
+4. Abstractia
 
 **Indexul:** 2
 
-**Hint:** Metoda Newton-Raphson este o tehnică iterativă pentru găsirea aproximativă a rădăcinilor unei funcții. Aceasta necesită derivata funcției și o valoare inițială aproximativă.
+**Hint:** Metoda Newton-Raphson este o tehnica iterativa pentru gasirea aproximativa a radacinilor unei functii. Aceasta necesita derivata functiei si o valoare initiala aproximativa.
 
-**Întrebarea:** Ce metodă numerică folosește derivatele pentru a găsi rădăcinile unei funcții?
+**Intrebarea:** Ce metoda numerica foloseste derivatele pentru a gasi radacinile unei functii?
 
-**Răspunsuri:**
-1. Metoda bisectională
+**Raspunsuri:**
+1. Metoda bisectionala
 2. Metoda trapezului
 3. Metoda Newton-Raphson
 4. Metoda Gauss-Seidel
 
 **Indexul:** 2
 
-**Hint:** Puterea electrică într-un circuit este calculată prin produsul dintre tensiune și curent: \( P = U \cdot I \).
+**Hint:** Puterea electrica Intr-un circuit este calculata prin produsul dintre tensiune si curent: \( P = U \cdot I \).
 
-**Întrebarea:** Care este formula pentru puterea electrică într-un circuit?
+**Intrebarea:** Care este formula pentru puterea electrica Intr-un circuit?
 
-**Răspunsuri:**
+**Raspunsuri:**
 1. \( P = U / I \)
 2. \( P = U \cdot I \)
 3. \( P = U + I \)
@@ -178,11 +178,11 @@
 
 **Indexul:** 1
 
-**Hint:** Algoritmul de umplere a poligoanelor, cum ar fi algoritmul scan-line, este folosit pentru a determina ce pixeli să fie colorați pentru a umple un poligon.
+**Hint:** Algoritmul de umplere a poligoanelor, cum ar fi algoritmul scan-line, este folosit pentru a determina ce pixeli sa fie colorati pentru a umple un poligon.
 
-**Întrebarea:** Ce algoritm de umplere a poligoanelor este utilizat pentru a determina ce pixeli să fie colorați într-un poligon?
+**Intrebarea:** Ce algoritm de umplere a poligoanelor este utilizat pentru a determina ce pixeli sa fie colorati Intr-un poligon?
 
-**Răspunsuri:**
+**Raspunsuri:**
 1. Algoritmul Dijkstra
 2. Algoritmul scan-line
 3. Algoritmul Prim
@@ -190,11 +190,11 @@
 
 **Indexul:** 1
 
-**Hint:** Shading-ul Gouraud este o tehnică de interpolare a culorii utilizată pentru a produce suprafețe netede prin calcularea culorilor la vârfurile poligonului și interpolarea acestora peste suprafață.
+**Hint:** Shading-ul Gouraud este o tehnica de interpolare a culorii utilizata pentru a produce suprafete netede prin calcularea culorilor la varfurile poligonului si interpolarea acestora peste suprafata.
 
-**Întrebarea:** Ce tehnică de shading este utilizată pentru a produce suprafețe netede prin interpolarea culorii?
+**Intrebarea:** Ce tehnica de shading este utilizata pentru a produce suprafete netede prin interpolarea culorii?
 
-**Răspunsuri:**
+**Raspunsuri:**
 1. Shading Phong
 2. Shading Gouraud
 3. Shading Flat
@@ -202,11 +202,11 @@
 
 **Indexul:** 1
 
-**Hint:** În CSS, selectorul `#id` este folosit pentru a aplica stiluri unui element unic, identificat prin atributul `id`.
+**Hint:** In CSS, selectorul `#id` este folosit pentru a aplica stiluri unui element unic, identificat prin atributul `id`.
 
-**Întrebarea:** Ce selector CSS este utilizat pentru a aplica stiluri unui element unic?
+**Intrebarea:** Ce selector CSS este utilizat pentru a aplica stiluri unui element unic?
 
-**Răspunsuri:**
+**Raspunsuri:**
 1. `#class`
 2. `.id`
 3. `#id`
@@ -214,35 +214,35 @@
 
 **Indexul:** 2
 
-**Hint:** O poartă logică OR are două sau mai multe intrări și o singură ieșire. Ieșirea este 1 dacă cel puțin una dintre intrări este 1.
+**Hint:** O poarta logica OR are doua sau mai multe intrari si o singura iesire. Iesirea este 1 daca cel putin una dintre intrari este 1.
 
-**Întrebarea:** Care este condiția pentru ca ieșirea unei porți logice OR să fie 1?
+**Intrebarea:** Care este conditia pentru ca iesirea unei porti logice OR sa fie 1?
 
-**Răspunsuri:**
-1. Toate intrările trebuie să fie 1
-2. Toate intrările trebuie să fie 0
-3. Cel puțin una dintre intrări trebuie să fie 1
-4. Cel puțin una dintre intrări trebuie să fie 0
+**Raspunsuri:**
+1. Toate intrarile trebuie sa fie 1
+2. Toate intrarile trebuie sa fie 0
+3. Cel putin una dintre intrari trebuie sa fie 1
+4. Cel putin una dintre intrari trebuie sa fie 0
 
 **Indexul:** 2
 
-**Hint:** Principiul conservării energiei afirmă că energia totală a unui sistem izolat rămâne constantă, deși poate fi transformată dintr-o formă în alta.
+**Hint:** Principiul conservarii energiei afirma ca energia totala a unui sistem izolat ramane constanta, desi poate fi transformata dintr-o forma In alta.
 
-**Întrebarea:** Ce afirmă principiul conservării energiei?
+**Intrebarea:** Ce afirma principiul conservarii energiei?
 
-**Răspunsuri:**
-1. Energia totală a unui sistem izolat rămâne constantă.
-2. Energia totală a unui sistem izolat poate crește.
-3. Energia totală a unui sistem izolat poate scădea.
-4. Energia totală a unui sistem izolat se poate crea sau distruge.
+**Raspunsuri:**
+1. Energia totala a unui sistem izolat ramane constanta.
+2. Energia totala a unui sistem izolat poate creste.
+3. Energia totala a unui sistem izolat poate scadea.
+4. Energia totala a unui sistem izolat se poate crea sau distruge.
 
 **Indexul:** 0
 
-**Hint:** O memorie ROM (Read-Only Memory) este un tip de memorie care poate fi doar citită și nu poate fi modificată după fabricare.
+**Hint:** O memorie ROM (Read-Only Memory) este un tip de memorie care poate fi doar citita si nu poate fi modificata dupa fabricare.
 
-**Întrebarea:** Ce tip de memorie poate fi doar citită și nu poate fi modificată după fabricare?
+**Intrebarea:** Ce tip de memorie poate fi doar citita si nu poate fi modificata dupa fabricare?
 
-**Răspunsuri:**
+**Raspunsuri:**
 1. RAM
 2. EEPROM
 3. Flash
@@ -250,23 +250,23 @@
 
 **Indexul:** 3
 
-**Hint:** Un wireframe este un schelet de bază al unei interfețe utilizator, utilizat pentru a reprezenta structura și layout-ul elementelor de pe pagină, fără detalii de design.
+**Hint:** Un wireframe este un schelet de baza al unei interfete utilizator, utilizat pentru a reprezenta structura si layout-ul elementelor de pe pagina, fara detalii de design.
 
-**Întrebarea:** Ce reprezintă un wireframe în proiectarea interfețelor utilizator?
+**Intrebarea:** Ce reprezinta un wireframe In proiectarea interfetelor utilizator?
 
-**Răspunsuri:**
-1. Un prototip complet funcțional.
-2. Un schelet de bază al unei interfețe utilizator.
-3. Un document de cerințe.
-4. Un set de specificații tehnice.
+**Raspunsuri:**
+1. Un prototip complet functional.
+2. Un schelet de baza al unei interfete utilizator.
+3. Un document de cerinte.
+4. Un set de specificatii tehnice.
 
 **Indexul:** 1
 
-**Hint:** În C++, cuvântul cheie `virtual` este folosit pentru a declara o funcție virtuală, permițând redefinirea ei în clasele derivate.
+**Hint:** In C++, cuvantul cheie `virtual` este folosit pentru a declara o functie virtuala, permitand redefinirea ei In clasele derivate.
 
-**Întrebarea:** Ce cuvânt cheie în C++ este folosit pentru a declara o funcție virtuală?
+**Intrebarea:** Ce cuvant cheie In C++ este folosit pentru a declara o functie virtuala?
 
-**Răspunsuri:**
+**Raspunsuri:**
 1. override
 2. virtual
 3. dynamic
@@ -274,59 +274,59 @@
 
 **Indexul:** 1
 
-**Hint:** Polimorfismul permite utilizarea unei singure interfețe pentru a reprezenta diferite tipuri de obiecte.
+**Hint:** Polimorfismul permite utilizarea unei singure interfete pentru a reprezenta diferite tipuri de obiecte.
 
-**Întrebarea:** Ce concept OOP permite utilizarea unei singure interfețe pentru a reprezenta diferite tipuri de obiecte?
+**Intrebarea:** Ce concept OOP permite utilizarea unei singure interfete pentru a reprezenta diferite tipuri de obiecte?
 
-**Răspunsuri:**
-1. Moștenirea
+**Raspunsuri:**
+1. Mostenirea
 2. Incapsularea
 3. Polimorfismul
-4. Abstracția
+4. Abstractia
 
 **Indexul:** 2
 
-**Hint:** Metoda Gauss-Seidel este utilizată pentru rezolvarea sistemelor liniare de ecuații printr-o procedură iterativă.
+**Hint:** Metoda Gauss-Seidel este utilizata pentru rezolvarea sistemelor liniare de ecuatii printr-o procedura iterativa.
 
-**Întrebarea:** Ce metodă numerică este utilizată pentru rezolvarea sistemelor liniare de ecuații printr-o procedură iterativă?
+**Intrebarea:** Ce metoda numerica este utilizata pentru rezolvarea sistemelor liniare de ecuatii printr-o procedura iterativa?
 
-**Răspunsuri:**
+**Raspunsuri:**
 1. Metoda Newton-Raphson
 2. Metoda trapezului
-3. Metoda bisectională
+3. Metoda bisectionala
 4. Metoda Gauss-Seidel
 
 **Indexul:** 3
 
-**Hint:** Curentul electric este fluxul de sarcini electrice și este măsurat în amperi (A).
+**Hint:** Curentul electric este fluxul de sarcini electrice si este masurat In amperi (A).
 
-**Întrebarea:** În ce unitate se măsoară curentul electric?
+**Intrebarea:** In ce unitate se masoara curentul electric?
 
-**Răspunsuri:**
-1. Volți (V)
+**Raspunsuri:**
+1. Volti (V)
 2. Ohmi (Ω)
 3. Amperi (A)
-4. Wați (W)
+4. Wati (W)
 
 **Indexul:** 2
 
-**Hint:** Transformările geometrice, precum translația, rotația și scalarea, sunt folosite pentru a manipula obiectele într-un spațiu 2D sau 3D.
+**Hint:** Transformarile geometrice, precum translatia, rotatia si scalarea, sunt folosite pentru a manipula obiectele Intr-un spatiu 2D sau 3D.
 
-**Întrebarea:** Ce tipuri de transformări geometrice sunt utilizate pentru a manipula obiectele într-un spațiu 2D sau 3D?
+**Intrebarea:** Ce tipuri de transformari geometrice sunt utilizate pentru a manipula obiectele Intr-un spatiu 2D sau 3D?
 
-**Răspunsuri:**
-1. Translația, rotația și scalarea
-2. Filtrarea, umbrele și textura
-3. Colorarea, iluminarea și modelarea
-4. Maparea, rasterizarea și culling-ul
+**Raspunsuri:**
+1. Translatia, rotatia si scalarea
+2. Filtrarea, umbrele si textura
+3. Colorarea, iluminarea si modelarea
+4. Maparea, rasterizarea si culling-ul
 
 **Indexul:** 0
 
-**Hint:** În grafica 3D, culling-ul este procesul de eliminare a părților unui model care nu sunt vizibile dintr-un anumit punct de vedere pentru a optimiza performanța randării.
+**Hint:** In grafica 3D, culling-ul este procesul de eliminare a partilor unui model care nu sunt vizibile dintr-un anumit punct de vedere pentru a optimiza performanta randarii.
 
-**Întrebarea:** Ce proces în grafica 3D elimină părțile unui model care nu sunt vizibile dintr-un anumit punct de vedere?
+**Intrebarea:** Ce proces In grafica 3D elimina partile unui model care nu sunt vizibile dintr-un anumit punct de vedere?
 
-**Răspunsuri:**
+**Raspunsuri:**
 1. Rasterizarea
 2. Culling-ul
 3. Texturarea
@@ -334,11 +334,11 @@
 
 **Indexul:** 1
 
-**Hint:** În JavaScript, funcția `addEventListener` este utilizată pentru a atașa un handler pentru un eveniment specific, precum un clic de buton.
+**Hint:** In JavaScript, functia `addEventListener` este utilizata pentru a atasa un handler pentru un eveniment specific, precum un clic de buton.
 
-**Întrebarea:** Ce funcție JavaScript este utilizată pentru a atașa un handler pentru un eveniment specific?
+**Intrebarea:** Ce functie JavaScript este utilizata pentru a atasa un handler pentru un eveniment specific?
 
-**Răspunsuri:**
+**Raspunsuri:**
 1. onClick
 2. handleEvent
 3. attachEvent
@@ -346,23 +346,23 @@
 
 **Indexul:** 3
 
-**Hint:** O poartă logică NOT are o singură intrare și o singură ieșire. Ieșirea este inversul intrării.
+**Hint:** O poarta logica NOT are o singura intrare si o singura iesire. Iesirea este inversul intrarii.
 
-**Întrebarea:** Care este condiția pentru ca ieșirea unei porți logice NOT să fie 1?
+**Intrebarea:** Care este conditia pentru ca iesirea unei porti logice NOT sa fie 1?
 
-**Răspunsuri:**
-1. Intrarea trebuie să fie 0
-2. Intrarea trebuie să fie 1
-3. Toate intrările trebuie să fie 1
-4. Toate intrările trebuie să fie 0
+**Raspunsuri:**
+1. Intrarea trebuie sa fie 0
+2. Intrarea trebuie sa fie 1
+3. Toate intrarile trebuie sa fie 1
+4. Toate intrarile trebuie sa fie 0
 
 **Indexul:** 0
 
-**Hint:** Ecuația de stare a gazului ideal este \( PV = nRT \), unde P este presiunea, V este volumul, n este numărul de moli, R este constanta universală a gazelor, și T este temperatura absolută.
+**Hint:** Ecuatia de stare a gazului ideal este \( PV = nRT \), unde P este presiunea, V este volumul, n este numarul de moli, R este constanta universala a gazelor, si T este temperatura absoluta.
 
-**Întrebarea:** Care este ecuația de stare a gazului ideal?
+**Intrebarea:** Care este ecuatia de stare a gazului ideal?
 
-**Răspunsuri:**
+**Raspunsuri:**
 1. \( PV = nRT \)
 2. \( P = VnRT \)
 3. \( P + V = nRT \)
@@ -370,23 +370,23 @@
 
 **Indexul:** 0
 
-**Hint:** Un contor binar este un circuit secvențial digital care contorizează impulsurile de ceas și stochează numărul acestor impulsuri într-o formă binară.
+**Hint:** Un contor binar este un circuit secvential digital care contorizeaza impulsurile de ceas si stocheaza numarul acestor impulsuri Intr-o forma binara.
 
-**Întrebarea:** Ce este un contor binar?
+**Intrebarea:** Ce este un contor binar?
 
-**Răspunsuri:**
-1. Un dispozitiv de măsurare a tensiunii
-2. Un circuit secvențial digital care contorizează impulsurile de ceas
-3. Un circuit combinatorial care efectuează adunări binare
+**Raspunsuri:**
+1. Un dispozitiv de masurare a tensiunii
+2. Un circuit secvential digital care contorizeaza impulsurile de ceas
+3. Un circuit combinatorial care efectueaza adunari binare
 4. Un dispozitiv pentru memorarea datelor
 
 **Indexul:** 1
 
-**Hint:** Principiul de design "KISS" (Keep It Simple, Stupid) promovează crearea de interfețe simple și ușor de utilizat, evitând complexitatea inutilă.
+**Hint:** Principiul de design "KISS" (Keep It Simple, Stupid) promoveaza crearea de interfete simple si usor de utilizat, evitand complexitatea inutila.
 
-**Întrebarea:** Ce principiu de design promovează crearea de interfețe simple și ușor de utilizat, evitând complexitatea inutilă?
+**Intrebarea:** Ce principiu de design promoveaza crearea de interfete simple si usor de utilizat, evitand complexitatea inutila?
 
-**Răspunsuri:**
+**Raspunsuri:**
 1. HCI (Human-Computer Interaction)
 2. WYSIWYG
 3. KISS (Keep It Simple, Stupid)
@@ -394,47 +394,47 @@
 
 **Indexul:** 2
 
-**Hint:** În C++, constructorul unei clase este o funcție specială care este apelată automat atunci când un obiect al clasei este creat. Constructorul are același nume ca și clasa.
+**Hint:** In C++, constructorul unei clase este o functie speciala care este apelata automat atunci cand un obiect al clasei este creat. Constructorul are acelasi nume ca si clasa.
 
-**Întrebarea:** Care este funcția specială din C++ care este apelată automat la crearea unui obiect al clasei?
+**Intrebarea:** Care este functia speciala din C++ care este apelata automat la crearea unui obiect al clasei?
 
-**Răspunsuri:**
+**Raspunsuri:**
 1. Destructorul
 2. Operatorul de suprascriere
 3. Constructorul
-4. Funcția principală
+4. Functia principala
 
 **Indexul:** 2
 
-**Hint:** Incapsularea este un concept OOP care implică ascunderea detaliilor de implementare ale unei clase și expunerea doar a unei interfețe publice.
+**Hint:** Incapsularea este un concept OOP care implica ascunderea detaliilor de implementare ale unei clase si expunerea doar a unei interfete publice.
 
-**Întrebarea:** Ce concept OOP implică ascunderea detaliilor de implementare și expunerea doar a unei interfețe publice?
+**Intrebarea:** Ce concept OOP implica ascunderea detaliilor de implementare si expunerea doar a unei interfete publice?
 
-**Răspunsuri:**
-1. Moștenirea
+**Raspunsuri:**
+1. Mostenirea
 2. Incapsularea
 3. Polimorfismul
-4. Abstracția
+4. Abstractia
 
 **Indexul:** 1
 
-**Hint:** Metoda trapezului este o tehnică de integrare numerică care aproximează aria sub o curbă prin împărțirea ei în trapeze.
+**Hint:** Metoda trapezului este o tehnica de integrare numerica care aproximeaza aria sub o curba prin Impartirea ei In trapeze.
 
-**Întrebarea:** Ce metodă numerică de integrare aproximează aria sub o curbă prin împărțirea ei în trapeze?
+**Intrebarea:** Ce metoda numerica de integrare aproximeaza aria sub o curba prin Impartirea ei In trapeze?
 
-**Răspunsuri:**
+**Raspunsuri:**
 1. Metoda Newton-Raphson
 2. Metoda trapezului
-3. Metoda bisectională
+3. Metoda bisectionala
 4. Metoda Gauss-Seidel
 
 **Indexul:** 1
 
-**Hint:** Un condensator este un component pasiv care stochează energie în câmpul electric dintre două plăci conductoare separate de un dielectric.
+**Hint:** Un condensator este un component pasiv care stocheaza energie In campul electric dintre doua placi conductoare separate de un dielectric.
 
-**Întrebarea:** Ce component pasiv stochează energie în câmpul electric dintre două plăci conductoare?
+**Intrebarea:** Ce component pasiv stocheaza energie In campul electric dintre doua placi conductoare?
 
-**Răspunsuri:**
+**Raspunsuri:**
 1. Rezistorul
 2. Inductorul
 3. Condensatorul
@@ -442,23 +442,23 @@
 
 **Indexul:** 2
 
-**Hint:** Un shader este un program care rulează pe GPU și este utilizat pentru a calcula efectele de iluminare și culoare pentru fiecare pixel și vertex.
+**Hint:** Un shader este un program care ruleaza pe GPU si este utilizat pentru a calcula efectele de iluminare si culoare pentru fiecare pixel si vertex.
 
-**Întrebarea:** Ce este un shader în grafică asistată de calculator?
+**Intrebarea:** Ce este un shader In grafica asistata de calculator?
 
-**Răspunsuri:**
-1. Un program care rulează pe CPU și calculează efectele de iluminare
-2. Un program care rulează pe GPU și calculează efectele de iluminare și culoare
+**Raspunsuri:**
+1. Un program care ruleaza pe CPU si calculeaza efectele de iluminare
+2. Un program care ruleaza pe GPU si calculeaza efectele de iluminare si culoare
 3. Un algoritm de compresie a texturilor
-4. O tehnică de mapare a texturilor
+4. O tehnica de mapare a texturilor
 
 **Indexul:** 1
 
-**Hint:** În grafica 3D, iluminarea Phong este o tehnică de iluminare care calculează reflexia speculară și difuză pentru a obține suprafețe mai realiste.
+**Hint:** In grafica 3D, iluminarea Phong este o tehnica de iluminare care calculeaza reflexia speculara si difuza pentru a obtine suprafete mai realiste.
 
-**Întrebarea:** Ce tehnică de iluminare în grafica 3D calculează reflexia speculară și difuză pentru a obține suprafețe mai realiste?
+**Intrebarea:** Ce tehnica de iluminare In grafica 3D calculeaza reflexia speculara si difuza pentru a obtine suprafete mai realiste?
 
-**Răspunsuri:**
+**Raspunsuri:**
 1. Iluminarea Gouraud
 2. Iluminarea Flat
 3. Iluminarea Lambert
@@ -466,11 +466,11 @@
 
 **Indexul:** 3
 
-**Hint:** În HTML, eticheta `<form>` este utilizată pentru a crea un formular web care permite utilizatorilor să introducă și să trimită date.
+**Hint:** In HTML, eticheta `<form>` este utilizata pentru a crea un formular web care permite utilizatorilor sa introduca si sa trimita date.
 
-**Întrebarea:** Ce etichetă HTML este utilizată pentru a crea un formular web?
+**Intrebarea:** Ce eticheta HTML este utilizata pentru a crea un formular web?
 
-**Răspunsuri:**
+**Raspunsuri:**
 1. `<input>`
 2. `<button>`
 3. `<form>`
@@ -478,23 +478,23 @@
 
 **Indexul:** 2
 
-**Hint:** Un multiplexor (MUX) este un circuit combinatorial care selectează una dintre mai multe intrări și o transmite la ieșire, controlat de semnalele de selecție.
+**Hint:** Un multiplexor (MUX) este un circuit combinatorial care selecteaza una dintre mai multe intrari si o transmite la iesire, controlat de semnalele de selectie.
 
-**Întrebarea:** Ce este un multiplexor?
+**Intrebarea:** Ce este un multiplexor?
 
-**Răspunsuri:**
-1. Un circuit care adaugă două numere binare
-2. Un circuit care stochează un bit de date
-3. Un circuit care selectează una dintre mai multe intrări și o transmite la ieșire
-4. Un circuit care compară două valori binare
+**Raspunsuri:**
+1. Un circuit care adauga doua numere binare
+2. Un circuit care stocheaza un bit de date
+3. Un circuit care selecteaza una dintre mai multe intrari si o transmite la iesire
+4. Un circuit care compara doua valori binare
 
 **Indexul:** 2
 
-**Hint:** Efectul fotoelectric se referă la emisia de electroni dintr-un material atunci când acesta este iluminat cu lumină de o anumită frecvență.
+**Hint:** Efectul fotoelectric se refera la emisia de electroni dintr-un material atunci cand acesta este iluminat cu lumina de o anumita frecventa.
 
-**Întrebarea:** Ce fenomen fizic se referă la emisia de electroni dintr-un material atunci când acesta este iluminat cu lumină de o anumită frecvență?
+**Intrebarea:** Ce fenomen fizic se refera la emisia de electroni dintr-un material atunci cand acesta este iluminat cu lumina de o anumita frecventa?
 
-**Răspunsuri:**
+**Raspunsuri:**
 1. Efectul Doppler
 2. Efectul Joule
 3. Efectul fotoelectric
@@ -504,13 +504,13 @@
 
 ---
 
-### Electronică Digitală
+### Electronica Digitala
 
-**Hint:** O memorie RAM (Random Access Memory) este un tip de memorie volatilă care permite citirea și scrierea datelor în orice ordine.
+**Hint:** O memorie RAM (Random Access Memory) este un tip de memorie volatila care permite citirea si scrierea datelor In orice ordine.
 
-**Întrebarea:** Ce tip de memorie permite citirea și scrierea datelor în orice ordine?
+**Intrebarea:** Ce tip de memorie permite citirea si scrierea datelor In orice ordine?
 
-**Răspunsuri:**
+**Raspunsuri:**
 1. ROM
 2. EEPROM
 3. Flash
@@ -520,9 +520,9 @@
 
 **Hint:** Testarea de utilizabilitate este procesul de evaluare a unui produs sau sistem prin testarea acestuia cu utilizatori reali pentru a identifica problemele de utilizare.
 
-**Întrebarea:** Ce proces implică evaluarea unui produs prin testarea acestuia cu utilizatori reali pentru a identifica problemele de utilizare?
+**Intrebarea:** Ce proces implica evaluarea unui produs prin testarea acestuia cu utilizatori reali pentru a identifica problemele de utilizare?
 
-**Răspunsuri:**
+**Raspunsuri:**
 1. Design grafic
 2. Prototipare
 3. Testare de utilizabilitate
@@ -530,11 +530,11 @@
 
 **Indexul:** 2
 
-**Hint:** În Python, lista comprehensiunilor este o metodă sintactică pentru a crea liste noi bazate pe liste existente folosind o sintaxă concisă.
+**Hint:** In Python, lista comprehensiunilor este o metoda sintactica pentru a crea liste noi bazate pe liste existente folosind o sintaxa concisa.
 
-**Întrebarea:** Ce metodă în Python este utilizată pentru a crea liste noi bazate pe liste existente folosind o sintaxă concisă?
+**Intrebarea:** Ce metoda In Python este utilizata pentru a crea liste noi bazate pe liste existente folosind o sintaxa concisa?
 
-**Răspunsuri:**
+**Raspunsuri:**
 1. for-loop
 2. lambda
 3. list comprehensions
@@ -542,47 +542,47 @@
 
 **Indexul:** 2
 
-**Hint:** Abstracția este un concept OOP care implică simplificarea complexității prin ascunderea detaliilor inutile și expunerea doar a caracteristicilor esențiale.
+**Hint:** Abstractia este un concept OOP care implica simplificarea complexitatii prin ascunderea detaliilor inutile si expunerea doar a caracteristicilor esentiale.
 
-**Întrebarea:** Ce concept OOP implică simplificarea complexității prin ascunderea detaliilor inutile și expunerea doar a caracteristicilor esențiale?
+**Intrebarea:** Ce concept OOP implica simplificarea complexitatii prin ascunderea detaliilor inutile si expunerea doar a caracteristicilor esentiale?
 
-**Răspunsuri:**
+**Raspunsuri:**
 1. Polimorfismul
-2. Moștenirea
+2. Mostenirea
 3. Incapsularea
-4. Abstracția
+4. Abstractia
 
 **Indexul:** 3
 
-**Hint:** Metoda bisectională este o metodă de găsire a rădăcinilor unei funcții prin împărțirea intervalului în două și selectarea subintervalului în care funcția își schimbă semnul.
+**Hint:** Metoda bisectionala este o metoda de gasire a radacinilor unei functii prin Impartirea intervalului In doua si selectarea subintervalului In care functia Isi schimba semnul.
 
-**Întrebarea:** Ce metodă numerică găsește rădăcinile unei funcții prin împărțirea intervalului în două și selectarea subintervalului în care funcția își schimbă semnul?
+**Intrebarea:** Ce metoda numerica gaseste radacinile unei functii prin Impartirea intervalului In doua si selectarea subintervalului In care functia Isi schimba semnul?
 
-**Răspunsuri:**
+**Raspunsuri:**
 1. Metoda Newton-Raphson
 2. Metoda trapezului
-3. Metoda bisectională
+3. Metoda bisectionala
 4. Metoda Gauss-Seidel
 
 **Indexul:** 2
 
-**Hint:** Un transformator este un dispozitiv electric care transferă energie electrică între două sau mai multe circuite prin inducție electromagnetică.
+**Hint:** Un transformator este un dispozitiv electric care transfera energie electrica Intre doua sau mai multe circuite prin inductie electromagnetica.
 
-**Întrebarea:** Ce dispozitiv electric transferă energie electrică între două sau mai multe circuite prin inducție electromagnetică?
+**Intrebarea:** Ce dispozitiv electric transfera energie electrica Intre doua sau mai multe circuite prin inductie electromagnetica?
 
-**Răspunsuri:**
+**Raspunsuri:**
 1. Condensator
 2. Rezistor
 3. Transformator
-4. Diodă
+4. Dioda
 
 **Indexul:** 3
 
-**Hint:** Anti-aliasing este o tehnică utilizată în grafica computerizată pentru a reduce artefactele vizuale denumite "aliasing," prin netezirea marginilor obiectelor.
+**Hint:** Anti-aliasing este o tehnica utilizata In grafica computerizata pentru a reduce artefactele vizuale denumite "aliasing," prin netezirea marginilor obiectelor.
 
-**Întrebarea:** Ce tehnică este utilizată în grafica computerizată pentru a reduce aliasing-ul prin netezirea marginilor obiectelor?
+**Intrebarea:** Ce tehnica este utilizata In grafica computerizata pentru a reduce aliasing-ul prin netezirea marginilor obiectelor?
 
-**Răspunsuri:**
+**Raspunsuri:**
 1. Shading
 2. Texturare
 3. Anti-aliasing
@@ -590,11 +590,11 @@
 
 **Indexul:** 2
 
-**Hint:** Texture mapping este procesul de aplicare a unei imagini 2D (textură) pe suprafața unui model 3D pentru a-i conferi detalii vizuale.
+**Hint:** Texture mapping este procesul de aplicare a unei imagini 2D (textura) pe suprafata unui model 3D pentru a-i conferi detalii vizuale.
 
-**Întrebarea:** Ce proces de grafică 3D implică aplicarea unei imagini 2D pe suprafața unui model 3D?
+**Intrebarea:** Ce proces de grafica 3D implica aplicarea unei imagini 2D pe suprafata unui model 3D?
 
-**Răspunsuri:**
+**Raspunsuri:**
 1. Texture mapping
 2. Shading
 3. Ray tracing
