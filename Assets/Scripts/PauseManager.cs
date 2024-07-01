@@ -3,20 +3,22 @@ using UnityEngine.SceneManagement;
 
 public class PauseManager : MonoBehaviour
 {
-    public Canvas pauseCanvas; // Reference to the Canvas containing your pause UI
-    public Canvas minimapCanvas;
-    public Canvas gameTimerCanvas;
-    public GameTimer gameTimer;
+    private Canvas pauseCanvas; // Reference to the Canvas containing your pause UI
+    private Canvas minimapCanvas;
+    private Canvas gameTimerCanvas;
+    private GameTimer gameTimer;
+    private HelpManager helpManager;
 
     public static bool isPaused = false;
 
     void Start()
     {
-        //pauseCanvas = GetComponent<Canvas>();
         pauseCanvas = GameObject.Find("PauseCanvas").GetComponent<Canvas>();
         minimapCanvas = GameObject.Find("MinimapView").GetComponent<Canvas>();
         gameTimerCanvas = GameObject.Find("GameTimer").GetComponent<Canvas>();
         gameTimer = FindObjectOfType<GameTimer>();
+        helpManager = FindObjectOfType<HelpManager>();
+
         // Hide the canvas at the start
         if (pauseCanvas != null)
         {
@@ -32,8 +34,8 @@ public class PauseManager : MonoBehaviour
 
     void Update()
     {
-        // Check if the player presses the pause key (e.g., Escape)
-        if (Input.GetKeyDown(KeyCode.Escape))
+        // Check if the player presses the pause key
+        if (Input.GetKeyDown(KeyCode.P))
         {
             TogglePause(); // Toggle pause state
         }
@@ -41,7 +43,6 @@ public class PauseManager : MonoBehaviour
 
     public void SetPause()
     {
-        isPaused = true;
         Time.timeScale = 0f; // Pause the game
 
         Cursor.lockState = CursorLockMode.None;
@@ -51,14 +52,19 @@ public class PauseManager : MonoBehaviour
         {
             pauseCanvas.enabled = true; // Show the pause UI
             minimapCanvas.enabled = false;
-            gameTimerCanvas.enabled= false;
+            gameTimerCanvas.enabled = false;
 
-            if(QuizManager.Instance != null)
+            if (QuizManager.Instance != null)
             {
                 if (QuizManager.quizStarted)
                 {
                     QuizManager.Instance.quizCanvas.SetActive(false);
                 }
+            }
+
+            if (helpManager != null && helpManager.IsHelpActive())
+            {
+                helpManager.HideHelp(); // Hide help if active
             }
         }
         else
@@ -66,11 +72,13 @@ public class PauseManager : MonoBehaviour
             Debug.LogError("Pause Canvas is not assigned in the Inspector!");
         }
         gameTimer.StopTimer();
+        isPaused = true;
     }
 
     public void ResumeGame()
     {
         isPaused = false;
+
         Time.timeScale = 1f; // Resume normal time scale
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false; // Hide the mouse pointer
@@ -78,7 +86,12 @@ public class PauseManager : MonoBehaviour
         if (pauseCanvas != null && minimapCanvas != null)
         {
             pauseCanvas.enabled = false; // Hide the pause UI
-            minimapCanvas.enabled = true;
+
+            if(minimapCanvas != null)
+            {
+                minimapCanvas.enabled = true; 
+            }
+
             gameTimerCanvas.enabled = true;
 
             if (QuizManager.Instance != null)
@@ -91,6 +104,11 @@ public class PauseManager : MonoBehaviour
 
                     QuizManager.Instance.quizCanvas.SetActive(true);
                 }
+            }
+
+            if (helpManager != null && helpManager.IsHelpActive())
+            {
+                helpManager.ShowHelp(); // Restore help if it was active before pause
             }
         }
         else
@@ -112,9 +130,6 @@ public class PauseManager : MonoBehaviour
         // Destroy all game objects
         foreach (GameObject obj in allObjects)
         {
-            //if (obj.CompareTag("MainCamera") || obj.CompareTag("Persistent"))
-            //    continue;
-
             Destroy(obj);
         }
 
@@ -133,5 +148,10 @@ public class PauseManager : MonoBehaviour
         {
             SetPause();
         }
+    }
+
+    public bool IsPaused
+    {
+        get { return isPaused; }
     }
 }

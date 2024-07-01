@@ -55,12 +55,13 @@ public class GameTimer : MonoBehaviour
     {
         while (isRunning)
         {
-            elapsedTime += 1f;
-            UpdateTimerText();
-            Debug.Log("Timer Updated: " + elapsedTime);
-            yield return new WaitForSecondsRealtime(1f);
+            yield return new WaitForSecondsRealtime(1f); // Wait for one second in real-time
+            elapsedTime += 1f; // Increase the elapsed time by one second
+            UpdateTimerText(); // Update the timer text on the UI
+            Debug.Log("Timer Updated: " + elapsedTime); // Log the updated timer value
         }
     }
+
 
     private void UpdateTimerText()
     {
