@@ -17,7 +17,10 @@ public class FootStepScript : MonoBehaviour
     {
         Vector3 accumulatedVelocity = PlayerMovement.rb.velocity;
         accumulatedVelocity.y = 0f; 
-        if (accumulatedVelocity != Vector3.zero && !PauseManager.isPaused && !QuizManager.quizStarted)
+        if (accumulatedVelocity != Vector3.zero && 
+            !PauseManager.Instance.isPaused && 
+            !QuizManager.Instance.quizStarted &&
+            !HintController.Instance.isHintActive)
         {
             FootSteps();
         }

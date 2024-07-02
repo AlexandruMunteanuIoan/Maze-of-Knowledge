@@ -14,6 +14,21 @@ public class QuestionBook : MonoBehaviour
         return question.GetHint();
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        PlayerInventory playerInventory = other.GetComponent<PlayerInventory>();
+        HintController uIManager = GameObject.FindAnyObjectByType<HintController>();
+
+        if (playerInventory != null && uIManager != null)
+        {
+            playerInventory.CollectQuestion(this.question);
+
+            uIManager.ShowHint(this.question.GetHint());
+
+            Destroy(gameObject);
+        }
+    }
+
     //private void OnTriggerEnter(Collider other)
     //{
     //    if (other.CompareTag("Player"))
@@ -29,16 +44,4 @@ public class QuestionBook : MonoBehaviour
     //        Destroy(gameObject);
     //    }
     //}
-
-    private void OnTriggerEnter(Collider other)
-    {
-        PlayerInventory playerInventory = other.GetComponent<PlayerInventory>();
-
-        if (playerInventory != null)
-        {
-            playerInventory.CollectQuestion(this.question);
-            Destroy(gameObject);
-            //gameObject.SetActive(false);
-        }
-    }
 }

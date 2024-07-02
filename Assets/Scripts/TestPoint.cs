@@ -13,9 +13,9 @@ public class TestPoint : MonoBehaviour
             //playerInventory.questions;
             if (playerInventory.questions.Count > 0)
             {
-
                 QuizManager.Instance.StartQuiz(playerInventory.questions);
                 playerInventory.questions = new List<Question>();
+                playerInventory.NumberOfCollectedQuestions = 0;
             }
         }
     }

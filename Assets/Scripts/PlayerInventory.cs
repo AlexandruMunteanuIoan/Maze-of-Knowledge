@@ -3,7 +3,8 @@ using UnityEngine;
 
 public class PlayerInventory : MonoBehaviour
 {
-    public int NumberOfQuestions {  get; private set; }
+    public int NumberOfCollectedQuestions {  get; set; }
+    public int NumberOfFinishedQuestions { get; set; }
 
     public List<Question> questions = new List<Question>();
     
@@ -12,6 +13,11 @@ public class PlayerInventory : MonoBehaviour
         questions ??= new List<Question>();
 
         questions.Add(question);
-        NumberOfQuestions++;
+        NumberOfCollectedQuestions++;
+    }
+
+    public void AddFinished(int nrfinished)
+    {
+        this.NumberOfFinishedQuestions += nrfinished;
     }
 }

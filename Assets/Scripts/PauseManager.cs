@@ -3,13 +3,33 @@ using UnityEngine.SceneManagement;
 
 public class PauseManager : MonoBehaviour
 {
+    public static PauseManager Instance;
+
     private Canvas pauseCanvas; // Reference to the Canvas containing your pause UI
     private Canvas minimapCanvas;
     private Canvas gameTimerCanvas;
     private GameTimer gameTimer;
     private HelpManager helpManager;
 
-    public static bool isPaused = false;
+    private bool minimapWasActive = true;
+    private bool gameTimerWasActive = true;
+
+    public bool isPaused = false;
+
+    private void Awake()
+    {
+        // Singleton pattern to ensure only one instance of PauseManager exists
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+            return;
+        }
+    }
 
     void Start()
     {
@@ -23,8 +43,6 @@ public class PauseManager : MonoBehaviour
         if (pauseCanvas != null)
         {
             pauseCanvas.enabled = false;
-            minimapCanvas.enabled = true;
-            gameTimerCanvas.enabled = true;
         }
         else
         {
@@ -48,18 +66,47 @@ public class PauseManager : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true; // Show the mouse pointer
 
-        if (pauseCanvas != null && minimapCanvas != null)
+        // Store the current active state of minimap and game timer canvases
+        minimapWasActive = minimapCanvas.enabled;
+        gameTimerWasActive = gameTimerCanvas.enabled;
+
+        // Pause book statistic controller
+        if (BookStatisticController.Instance != null)
+        {
+            if (BookStatisticController.Instance.IsActive)
+            {
+                BookStatisticController.Instance.DeactivateBookStatisticCanvas();
+            }
+        }
+
+        // Pause hint controller
+        if (HintController.Instance != null)
+        {
+            if (HintController.Instance.isHintActive)
+            {
+                HintController.Instance.DeactivateHintCanvas();
+            }
+        }
+
+        if (pauseCanvas != null)
         {
             pauseCanvas.enabled = true; // Show the pause UI
-            minimapCanvas.enabled = false;
-            gameTimerCanvas.enabled = false;
 
-            if (QuizManager.Instance != null)
+            if (minimapCanvas != null)
             {
-                if (QuizManager.quizStarted)
-                {
-                    QuizManager.Instance.quizCanvas.SetActive(false);
-                }
+                minimapCanvas.enabled = false;
+            }
+
+            if (gameTimerCanvas != null)
+            {
+                gameTimerCanvas.enabled = false;
+            }
+
+            // Handle specific actions during pause if needed
+
+            if (QuizManager.Instance != null && QuizManager.Instance.quizStarted)
+            {
+                QuizManager.Instance.quizCanvas.SetActive(false);
             }
 
             if (helpManager != null && helpManager.IsHelpActive())
@@ -71,7 +118,8 @@ public class PauseManager : MonoBehaviour
         {
             Debug.LogError("Pause Canvas is not assigned in the Inspector!");
         }
-        gameTimer.StopTimer();
+
+        gameTimer?.StopTimer();
         isPaused = true;
     }
 
@@ -83,27 +131,47 @@ public class PauseManager : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false; // Hide the mouse pointer
 
-        if (pauseCanvas != null && minimapCanvas != null)
+        // Resume book statistic controller
+        if (BookStatisticController.Instance != null)
+        {
+            if (BookStatisticController.Instance.IsActive)
+            {
+                BookStatisticController.Instance.ActivateBookStatisticCanvas();
+            }
+        }
+
+        // Resume hint controller
+        if (HintController.Instance != null)
+        {
+            if (HintController.Instance.isHintActive)
+            {
+                HintController.Instance.ActivateHintCanvas();
+            }
+        }
+
+        if (pauseCanvas != null)
         {
             pauseCanvas.enabled = false; // Hide the pause UI
 
-            if(minimapCanvas != null)
+            if (minimapCanvas != null && minimapWasActive)
             {
-                minimapCanvas.enabled = true; 
+                minimapCanvas.enabled = true;
             }
 
-            gameTimerCanvas.enabled = true;
-
-            if (QuizManager.Instance != null)
+            if (gameTimerCanvas != null && gameTimerWasActive)
             {
-                if (QuizManager.quizStarted)
-                {
-                    Time.timeScale = 0f; // Pause the game
-                    Cursor.lockState = CursorLockMode.None;
-                    Cursor.visible = true; // Show the mouse pointer
+                gameTimerCanvas.enabled = true;
+            }
 
-                    QuizManager.Instance.quizCanvas.SetActive(true);
-                }
+            // Handle specific actions after resume if needed
+
+            if (QuizManager.Instance != null && QuizManager.Instance.quizStarted)
+            {
+                Time.timeScale = 0f; // Pause the game
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true; // Show the mouse pointer
+
+                QuizManager.Instance.quizCanvas.SetActive(true);
             }
 
             if (helpManager != null && helpManager.IsHelpActive())
@@ -116,7 +184,7 @@ public class PauseManager : MonoBehaviour
             Debug.LogError("Pause Canvas is not assigned in the Inspector!");
         }
 
-        gameTimer.StartTimer();
+        gameTimer?.StartTimer();
     }
 
     public void ExitMenu()

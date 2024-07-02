@@ -2,10 +2,25 @@
 
 public class HelpManager : MonoBehaviour
 {
+    public static HelpManager Instance;
     private Canvas helpCanvas; // Reference to the Canvas containing your help UI
     private PauseManager pauseManager;
+
     private bool isHelpActive = false; // Flag to track if help is currently active
 
+    private void Awake()
+    {
+        // Singleton pattern to ensure only one instance of BookStatisticController exists
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
     void Start()
     {
         helpCanvas = GameObject.Find("HelpCanvas").GetComponent<Canvas>();
@@ -25,7 +40,8 @@ public class HelpManager : MonoBehaviour
     void Update()
     {
         // Check if the player presses the help key (e.g., F1)
-        if (Input.GetKeyDown(KeyCode.H))
+        if (Input.GetKeyDown(KeyCode.H) &&
+            !HintController.Instance.isHintActive)
         {
             ToggleHelp(); // Toggle help state
         }
@@ -35,9 +51,18 @@ public class HelpManager : MonoBehaviour
     {
         if (helpCanvas != null)
         {
+            if (HintController.Instance.isHintActive)
+            {
+                HintController.Instance.DeactivateHintCanvas();
+            }
+            if (BookStatisticController.Instance.IsActive)
+            {
+                BookStatisticController.Instance.DeactivateBookStatisticCanvas();
+            }
             if (!pauseManager.IsPaused)
             {
                 helpCanvas.enabled = true; // Show the help UI
+                this.isHelpActive = true;
             }
         }
         else
@@ -53,6 +78,7 @@ public class HelpManager : MonoBehaviour
             if (!pauseManager.IsPaused)
             {
                 helpCanvas.enabled = false; // Hide the help UI
+                this.isHelpActive = false;
             }
         }
         else
@@ -71,12 +97,10 @@ public class HelpManager : MonoBehaviour
     {
         if (isHelpActive)
         {
-            isHelpActive = false;
             HideHelp();
         }
         else
         {
-            isHelpActive = true;
             ShowHelp();
         }
     }

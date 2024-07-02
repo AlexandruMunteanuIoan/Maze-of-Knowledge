@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     private QuestionManager questionManager;
     private TestPointSpawn testPoint;
     private GameTimer gameTimer;
+    private BookStatisticController bookStatisticCanvas;
 
     private int MazeWidth;
     private int MazeHeight;
@@ -18,6 +19,8 @@ public class GameManager : MonoBehaviour
     private MazeCell _mazeCellPrefab;
 
     private List<CellCenter> mazeCellsList;
+
+    public int currentNumOfQuestions { get; private set; }
 
     public static GameManager Instance { get; private set; }
 
@@ -31,6 +34,7 @@ public class GameManager : MonoBehaviour
             DontDestroyOnLoad(gameObject);
             LoadConfig();
             InitializeGame();
+            currentNumOfQuestions = 10;
         }
         else
         {
@@ -97,6 +101,23 @@ public class GameManager : MonoBehaviour
         {
             Debug.LogError("GameTimer not found in scene.");
         }
+
+        bookStatisticCanvas = FindObjectOfType<BookStatisticController>();
+        if (bookStatisticCanvas == null)
+        {
+            Debug.LogError("BookStatisticCanvas not found in scene");
+        }
+
+        // locally checked - neede only as a convenience
+        CanvasGroup canvasGroup = FindObjectOfType<CanvasGroup>();
+        if (canvasGroup == null)
+        {
+            Debug.LogError("CanvasGroup not found in scene.");
+        }
+        else
+        {
+            canvasGroup.alpha = 1.0f;
+        }
     }
 
     public void InitializeGame()
@@ -115,21 +136,11 @@ public class GameManager : MonoBehaviour
         if (scene.name == "GameScene")
         {
             InitializeComponents();
-            SetupNewMaze();
-
-            //if (gameTimer != null)
-            //{
-            //    gameTimer.StartTimer();
-            //    Debug.Log("Timer started.");
-            //}
-            //else
-            //{
-            //    Debug.LogError("Failed to start timer: GameTimer is null.");
-            //}
+            SetupNewMazeEnv();
         }
     }
 
-    private void SetupNewMaze()
+    private void SetupNewMazeEnv()
     {
         // Ensure mazeGenerator is properly initialized
         if (mazeGenerator == null)
@@ -142,7 +153,7 @@ public class GameManager : MonoBehaviour
 
         // Perform other setup based on game logic
         questionManager.LoadQuestions(config.quizFile);
-        List<Question> selectedQuestions = questionManager.SelectQuestions(10);
+        List<Question> selectedQuestions = questionManager.SelectQuestions(currentNumOfQuestions);
 
         playerController.SpawnPlayerInMaze(ref mazeCellsList, WallSize, MazeHeight, MazeWidth);
         bookSpawner.SpawnBooks(selectedQuestions, ref mazeCellsList, WallSize);
@@ -196,4 +207,28 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.sceneLoaded -= OnSceneLoaded;
     }
+
+    private void Update()
+    {
+        // Check for B key press to toggle the book statistic canvas visibility
+        if (Input.GetKeyDown(KeyCode.B))
+        {
+            if (bookStatisticCanvas != null)
+            {
+                if (bookStatisticCanvas.IsActive)
+                {
+                    bookStatisticCanvas.DeactivateBookStatisticCanvas();
+                }
+                else
+                {
+                    bookStatisticCanvas.ActivateBookStatisticCanvas();
+                }
+            }
+            else
+            {
+                Debug.LogWarning("BookStatisticCanvas is not assigned or found.");
+            }
+        }
+    }
+
 }

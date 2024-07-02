@@ -5,9 +5,10 @@ using UnityEngine;
 public class QuizManager : MonoBehaviour
 {
     public static QuizManager Instance { get; private set; }
-    public static bool quizStarted = false;
+    public bool quizStarted = false;
     public GameObject quizCanvas;
     private QuizUI quizUI;
+
     private List<Question> currentQuestions;
     private List<Question> incorrectQuestions;
 
@@ -69,6 +70,9 @@ public class QuizManager : MonoBehaviour
         Time.timeScale = 1; // Continue the game
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false; // Show the mouse pointer
+
+        PlayerInventory playerInventory = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInventory>();
+        playerInventory.NumberOfFinishedQuestions = currentQuestions.Count - incorrectQuestions.Count;
 
         GameManager.Instance.OnQuizCompleted(incorrectQuestions);
     }
