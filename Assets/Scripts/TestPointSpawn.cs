@@ -7,7 +7,7 @@ public class TestPointSpawn: MonoBehaviour
 {
     public GameObject testPointPrefab;
 
-    public void SpawnPoint(List<CellCenter> mazeCellsList, int wallSize)
+    public void SpawnPoint(ref List<CellCenter> mazeCellsList, int wallSize)
     {
 
         CellCenter questionCellCenter = MazeGenerator.GetRandomAvailableCellCenter(mazeCellsList);

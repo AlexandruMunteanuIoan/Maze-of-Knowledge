@@ -5,7 +5,7 @@ public class BookSpawner : MonoBehaviour
 {
     public GameObject bookPrefab;
 
-    public void SpawnBooks(List<Question> questions, List<CellCenter> mazeCellsList, int wallSize)
+    public void SpawnBooks(List<Question> questions, ref List<CellCenter> mazeCellsList, int wallSize)
     {
         for (int i = 0; i < questions.Count; i++)
         {

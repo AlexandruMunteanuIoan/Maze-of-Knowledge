@@ -23,7 +23,7 @@ public class PlayerController : MonoBehaviour
         // Display hint to the player
     }
 
-    internal void SpawnPlayerInMaze(System.Collections.Generic.List<CellCenter> mazeCellsList, int wallSize, int mazeHeight, int mazeWidth)
+    internal void SpawnPlayerInMaze(ref System.Collections.Generic.List<CellCenter> mazeCellsList, int wallSize, int mazeHeight, int mazeWidth)
     {
         CellCenter playerCellCenter;
         do

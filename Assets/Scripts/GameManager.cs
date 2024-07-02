@@ -144,9 +144,9 @@ public class GameManager : MonoBehaviour
         questionManager.LoadQuestions(config.quizFile);
         List<Question> selectedQuestions = questionManager.SelectQuestions(10);
 
-        playerController.SpawnPlayerInMaze(mazeCellsList, WallSize, MazeHeight, MazeWidth);
-        bookSpawner.SpawnBooks(selectedQuestions, mazeCellsList, WallSize);
-        testPoint.SpawnPoint(mazeCellsList, WallSize);
+        playerController.SpawnPlayerInMaze(ref mazeCellsList, WallSize, MazeHeight, MazeWidth);
+        bookSpawner.SpawnBooks(selectedQuestions, ref mazeCellsList, WallSize);
+        testPoint.SpawnPoint(ref mazeCellsList, WallSize);
 
         // Additional setup for UI and game state
     }
@@ -183,7 +183,7 @@ public class GameManager : MonoBehaviour
         else
         {
             // Handle unanswered questions
-            bookSpawner.SpawnBooks(unansweredQuestions, mazeCellsList, WallSize);
+            bookSpawner.SpawnBooks(unansweredQuestions, ref mazeCellsList, WallSize);
         }
     }
 
